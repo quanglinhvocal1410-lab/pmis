@@ -255,6 +255,39 @@ function dataSheets_(ss) {
   });
 }
 
+function normalizeKey_(str) {
+  var s = String(str || '').trim();
+  if (!s || s === 'PK' || s === 'FK' || s === 'PFK') return s;
+  
+  s = s.replace(/%/g, " Percent");
+  
+  var from = "àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ";
+  var to   = "aaaaaaaaaaaaaaaaaeeeeeeeeeeeiiiiiooooooooooooooooouuuuuuuuuuuyyyyydAAAAAAAAAAAAAAAAAEEEEEEEEEEEIIIIIOOOOOOOOOOOOOOOOOUUUUUUUUUUUYYYYYD";
+  for (var i = 0; i < from.length; i++) {
+    s = s.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+  }
+  
+  var words = s.split(/[^a-zA-Z0-9_]+/);
+  var res = "";
+  for (var j = 0; j < words.length; j++) {
+    var w = words[j];
+    if (!w) continue;
+    var up = w.toUpperCase();
+    if (up === 'VND' || up === 'USD') {
+      res += (res && res.indexOf('_' + up) === -1 ? '_' : '') + up;
+    } else if (up === 'ID' || up === 'STT') {
+      res += up;
+    } else if (up === 'PERCENT') {
+      res += '_Percent';
+    } else {
+      res += w.charAt(0).toUpperCase() + w.slice(1);
+    }
+  }
+  
+  if (res === 'BanQlda') res = 'BanQLDA';
+  return res || s;
+}
+
 /**
  * Tự động tìm vị trí hàng tiêu đề (Headers) và hàng dữ liệu đầu tiên (FirstDataRow):
  * - Bảng Star Schema mới: Hàng 4 là Header (IDDuAn, MaDuAn, TenDuAn...), Hàng 5 là Type, Hàng 6+ là Data.
@@ -267,7 +300,7 @@ function sheetLayout_(sheet) {
     return { headerRow: 1, firstDataRow: 2, lastCol: 0, headers: [], idField: '' };
   }
 
-  var maxSearchRows = Math.min(8, lastRow);
+  var maxSearchRows = Math.min(20, lastRow);
   var sampleValues = sheet.getRange(1, 1, maxSearchRows, lastCol).getValues();
 
   var headerRow = 1;
@@ -281,17 +314,17 @@ function sheetLayout_(sheet) {
     if (!firstCell || firstCell === 'PK' || firstCell === 'FK' || firstCell === 'PFK') continue;
     if (firstCell.indexOf('—') !== -1 || firstCell.indexOf('(') !== -1 || /^BẢNG|^DANH MỤC|^MÔ HÌNH|^ERD/i.test(firstCell)) continue;
 
-    // Đếm số cột có tên thuộc tính hợp lệ (PascalCase / snake_case)
+    // Đếm số cột có tên thuộc tính hợp lệ (có chữ, không phải PK/FK)
     var validHeaderCount = 0;
     for (var c = 0; c < row.length; c++) {
       var cellVal = String(row[c] || '').trim();
-      if (/^[A-Za-z][A-Za-z0-9_]{1,50}$/.test(cellVal) && cellVal !== 'PK' && cellVal !== 'FK' && cellVal !== 'PFK') {
+      if (cellVal && cellVal !== 'PK' && cellVal !== 'FK' && cellVal !== 'PFK') {
         validHeaderCount++;
       }
     }
 
-    // Nếu cột 1 bắt đầu bằng ID/Ma/So/STT hoặc có từ 3 cột tên biến chuẩn trở lên
-    if ((/^(ID[A-Z]|Ma[A-Z]|So[A-Z]|STT|Ten[A-Z]|ID_|Ma_|So_)/.test(firstCell) && validHeaderCount >= 2) || validHeaderCount >= 4) {
+    // Nếu cột 1 bắt đầu bằng ID/Ma/So/STT (có phân biệt hoa thường hoặc không) hoặc có từ 3 cột tên biến chuẩn trở lên
+    if ((/^(ID|Ma|So|STT|Ten|Mã|Số|Tên)/i.test(firstCell) && validHeaderCount >= 2) || validHeaderCount >= 3) {
       headerRow = r + 1; // 1-indexed
       break;
     }
@@ -304,7 +337,7 @@ function sheetLayout_(sheet) {
   for (var i = 0; i < headerCells.length; i++) {
     var h = String(headerCells[i] || '').trim();
     if (h && h !== 'PK' && h !== 'FK' && h !== 'PFK' && !h.startsWith('Col_')) {
-      headers.push(h);
+      headers.push(normalizeKey_(h));
       actualColCount = i + 1;
     } else if (actualColCount > 0 && i < actualColCount) {
       headers.push('Col_' + (i + 1));

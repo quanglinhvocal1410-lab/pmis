@@ -70,6 +70,35 @@ function cellValue(c) {
   return String(c.v).trim();
 }
 
+function normalizeKey_(str) {
+  var s = String(str || '').trim();
+  if (!s || s === 'PK' || s === 'FK' || s === 'PFK') return s;
+  s = s.replace(/%/g, " Percent");
+  var from = "àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ";
+  var to   = "aaaaaaaaaaaaaaaaaeeeeeeeeeeeiiiiiooooooooooooooooouuuuuuuuuuuyyyyydAAAAAAAAAAAAAAAAAEEEEEEEEEEEIIIIIOOOOOOOOOOOOOOOOOUUUUUUUUUUUYYYYYD";
+  for (var i = 0; i < from.length; i++) {
+    s = s.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+  }
+  var words = s.split(/[^a-zA-Z0-9_]+/);
+  var res = "";
+  for (var j = 0; j < words.length; j++) {
+    var w = words[j];
+    if (!w) continue;
+    var up = w.toUpperCase();
+    if (up === 'VND' || up === 'USD') {
+      res += (res && res.indexOf('_' + up) === -1 ? '_' : '') + up;
+    } else if (up === 'ID' || up === 'STT') {
+      res += up;
+    } else if (up === 'PERCENT') {
+      res += '_Percent';
+    } else {
+      res += w.charAt(0).toUpperCase() + w.slice(1);
+    }
+  }
+  if (res === 'BanQlda') res = 'BanQLDA';
+  return res || s;
+}
+
 /** Đọc 1 worksheet thành { headers, rows } giữ nguyên kiểu số / ngày ISO. */
 function readSheet(ws, sheetName = '') {
   if (!ws || !ws['!ref']) return { headers: [], rows: [] };
@@ -78,9 +107,9 @@ function readSheet(ws, sheetName = '') {
 
   // Tìm hàng chứa header: trong Star Schema của sheet mới, header nằm ở hàng 4 (r = 3)
   let headerR = range.s.r;
-  for (let r = range.s.r; r <= Math.min(range.s.r + 5, range.e.r); r++) {
+  for (let r = range.s.r; r <= Math.min(range.s.r + 20, range.e.r); r++) {
     const firstVal = String(at(r, range.s.c) || '').trim();
-    if (/^(ID[A-Z]|STT|Ma[A-Z]|So[A-Z]|Ten[A-Z]|ID_|[A-Z][a-zA-Z0-9_]+$)/.test(firstVal) &&
+    if (/^(ID|Ma|So|STT|Ten|Mã|Số|Tên)/i.test(firstVal) &&
         !firstVal.includes(' — ') &&
         !firstVal.startsWith('Dim_') &&
         !firstVal.startsWith('Fact_') &&
@@ -94,7 +123,7 @@ function readSheet(ws, sheetName = '') {
   const headers = [];
   for (let c = range.s.c; c <= range.e.c; c++) {
     const hName = String(at(headerR, c) || '').trim();
-    if (hName) headers.push({ name: hName, col: c });
+    if (hName) headers.push({ name: normalizeKey_(hName), col: c });
   }
   if (!headers.length) return { headers: [], rows: [] };
 
