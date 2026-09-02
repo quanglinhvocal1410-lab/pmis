@@ -610,7 +610,8 @@ function schedulePanel(p) {
         { key: 'owner', label: 'Phụ trách' }
       ], acts, {
         sortKey: 'activityId',
-        onRow: (r) => openRecord(TABLE.TienDo, r.row, { title: r.name, subtitle: r.activityId })
+        onRow: (r) => openRecord(TABLE.TienDo, r.row, { title: r.name, subtitle: r.activityId }),
+        onEdit: (r) => openEditor(TABLE.TienDo, r.row)
       })
     ])
   ]);
@@ -829,7 +830,8 @@ function paymentPanel(p) {
     { key: 'status', label: 'Trạng thái', render: (r) => badge(r.status, 'Thanh toán') }
   ], p.payments, {
     sortKey: 'requestDate',
-    onRow: (r) => openRecord(TABLE.ThanhToan, r.row, { title: `Đợt ${r.ipc}`, subtitle: r.id })
+    onRow: (r) => openRecord(TABLE.ThanhToan, r.row, { title: `Đợt ${r.ipc}`, subtitle: r.id }),
+    onEdit: (r) => openEditor(TABLE.ThanhToan, r.row)
   });
 }
 
@@ -878,7 +880,8 @@ function docPanel(p) {
     }
   ], sortBy(p.docs, (d) => d.id), {
     sortKey: 'id',
-    onRow: (r) => openRecord(TABLE.HoSo, r.row, { title: r.content, subtitle: r.id })
+    onRow: (r) => openRecord(TABLE.HoSo, r.row, { title: r.content, subtitle: r.id }),
+    onEdit: (r) => openEditor(TABLE.HoSo, r.row)
   });
 }
 
@@ -902,6 +905,7 @@ function taskPanel(p) {
     { key: 'status', label: 'Trạng thái', render: (r) => badge(r.status, 'Công việc') }
   ], p.tasks, {
     sortKey: 'due',
-    onRow: (r) => openRecord(TABLE.CongViec, r.row, { title: r.title, subtitle: r.id })
+    onRow: (r) => openRecord(TABLE.CongViec, r.row, { title: r.title, subtitle: r.id }),
+    onEdit: (r) => openEditor(TABLE.CongViec, r.row)
   });
 }

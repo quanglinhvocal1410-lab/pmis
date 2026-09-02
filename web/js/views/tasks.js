@@ -133,7 +133,7 @@ function taskTable(rows) {
         : el('span.num.' + (r.overdue ? 'bad' : r.daysLeft <= 7 ? 'warn' : ''), fmtDelta(r.daysLeft)))
     },
     { key: 'status', label: 'Trạng thái', render: (r) => badge(r.status, 'Công việc') }
-  ], rows, { sortKey: 'due', onRow: openTask });
+  ], rows, { sortKey: 'due', onRow: openTask, onEdit: (r) => openEditor(TABLE.CongViec, r.row) });
 }
 
 /** Ngăn kéo chi tiết; ở chế độ có Apps Script thì cho đổi trạng thái. */

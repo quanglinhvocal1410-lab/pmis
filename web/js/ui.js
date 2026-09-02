@@ -102,6 +102,9 @@ export function table(cols, rows, opts = {}) {
       }, [c.label, st.key === c.key ? el('span.sort', st.dir > 0 ? ' ▲' : ' ▼') : null]);
       tr.appendChild(th);
     });
+    if (opts.onEdit) {
+      tr.appendChild(el('th', { style: { width: '40px' } }));
+    }
     clear(thead).appendChild(tr);
   }
 
@@ -117,18 +120,28 @@ export function table(cols, rows, opts = {}) {
     }
     clear(tbody);
     if (!data.length) {
-      tbody.appendChild(el('tr', el('td', { colspan: cols.length }, empty(opts.emptyText || 'Không có dữ liệu'))));
+      tbody.appendChild(el('tr', el('td', { colspan: cols.length + (opts.onEdit ? 1 : 0) }, empty(opts.emptyText || 'Không có dữ liệu'))));
       return;
     }
     data.forEach((r) => {
       const tr = el('tr' + (opts.rowClass ? '.' + opts.rowClass(r) : ''), {
-        onclick: opts.onRow ? () => opts.onRow(r) : null,
+        onclick: opts.onRow ? (e) => {
+          if (e.target.closest('button') || e.target.closest('a')) return;
+          opts.onRow(r);
+        } : null,
         class: opts.onRow ? 'clickable' : null
       });
       cols.forEach((c) => {
         const out = c.render ? c.render(r) : fallback(valueOf(c, r));
         tr.appendChild(el('td' + (c.align ? '.' + c.align : ''), out));
       });
+      if (opts.onEdit) {
+        const btnEdit = el('button.icon-btn', {
+          onclick: (e) => { e.stopPropagation(); opts.onEdit(r); },
+          title: 'Sửa nhanh'
+        }, '✏️');
+        tr.appendChild(el('td.center', btnEdit));
+      }
       tbody.appendChild(tr);
     });
   }

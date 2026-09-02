@@ -3,7 +3,7 @@ import { el, fmtDate, fmtPct, fmtMonth, daysBetween, sortBy, toISO } from '../co
 import { state, distinct, packageOptions } from '../store.js';
 import { latestProgress, progressSummary } from '../calc.js';
 import { pageHead, section, kpi, kpiGrid, badge, bar, table, filterBar, matches, empty } from '../ui.js';
-import { openRecord, addButton, emptyWithAdd } from '../editor.js';
+import { openRecord, openEditor, addButton, emptyWithAdd } from '../editor.js';
 import { TABLE } from '../store.js';
 import { gantt } from '../charts.js';
 import { renderCPMGantt } from '../cpmGantt.js';
@@ -143,7 +143,9 @@ function wbsTable(acts, showPkg) {
   return table(cols, acts, {
     sortKey: 'activityId',
     onRow: (r) => openRecord(TABLE.TienDo, r.row, {
-      title: r.name, subtitle: `${r.pkg.id} · ${r.activityId}`
-    })
+      title: r.name,
+      subtitle: r.activityId
+    }),
+    onEdit: (r) => openEditor(TABLE.TienDo, r.row)
   });
 }

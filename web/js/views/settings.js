@@ -4,7 +4,7 @@ import { state } from '../store.js';
 import { loadConfig, saveConfig, resetConfig, ping, isReadOnly, setAutoSync } from '../api.js';
 import { sync, refreshNow } from '../sync.js';
 import { pageHead, section, table, empty, btn, filterBar } from '../ui.js';
-import { openRecord } from '../editor.js';
+import { openRecord, openEditor } from '../editor.js';
 
 const SHEET_ID = '1Qij6W36SuuxSYGFSzhNUwgy_vpJCQjlxWlwuhTpGxMw';
 
@@ -216,7 +216,7 @@ function rawViewer() {
       .map((k) => ({ key: k, label: k.replace(/_/g, ' ') }));
     box.replaceChildren(
       el('p.sub', `${name} · ${rows.length} dòng · ${cols.length} cột`),
-      table(cols, rows, { onRow: (r) => openRecord(name, r, { title: name }) })
+      table(cols, rows, { onRow: (r) => openRecord(name, r, { title: name }), onEdit: (r) => openEditor(name, r) })
     );
   };
 

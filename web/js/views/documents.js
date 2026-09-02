@@ -3,7 +3,7 @@ import { el, fmtDate, fmtPct, sortBy } from '../core.js';
 import { state, distinct, packageOptions } from '../store.js';
 import { docStats } from '../calc.js';
 import { pageHead, section, kpi, kpiGrid, table, badge, bar, filterBar, matches, empty, chip } from '../ui.js';
-import { openRecord, addButton, emptyWithAdd, headersOf } from '../editor.js';
+import { openRecord, openEditor, addButton, emptyWithAdd, headersOf } from '../editor.js';
 import { TABLE } from '../store.js';
 
 export function render(params) {
@@ -135,6 +135,7 @@ function docTable(rows) {
     }
   ], sortBy(rows, (r) => r.id), {
     sortKey: 'id',
-    onRow: (r) => openRecord(TABLE.HoSo, r.row, { title: r.content, subtitle: `${r.id} · ${r.group}` })
+    onRow: (r) => openRecord(TABLE.HoSo, r.row, { title: r.content, subtitle: `${r.id} · ${r.group}` }),
+    onEdit: (r) => openEditor(TABLE.HoSo, r.row)
   });
 }

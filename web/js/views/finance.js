@@ -3,7 +3,7 @@ import { el, fmtShort, fmtMoney, fmtPct, fmtMonth, fmtDate, fmtSigned, sortBy, s
 import { state, packageOptions } from '../store.js';
 import { paymentSummary } from '../calc.js';
 import { pageHead, section, kpi, kpiGrid, table, badge, filterBar, empty, defList } from '../ui.js';
-import { openRecord, addButton, emptyWithAdd } from '../editor.js';
+import { openRecord, openEditor, addButton, emptyWithAdd } from '../editor.js';
 import { TABLE } from '../store.js';
 import { lineChart, barChart, PALETTE } from '../charts.js';
 
@@ -153,7 +153,8 @@ function disbTable(disb, showPkg) {
   );
   return table(cols, disb, {
     sortKey: 'period', sortDir: -1,
-    onRow: (r) => openRecord(TABLE.GiaiNgan, r.row, { title: fmtMonth(r.period), subtitle: r.id })
+    onRow: (r) => openRecord(TABLE.GiaiNgan, r.row, { title: fmtMonth(r.period), subtitle: r.id }),
+    onEdit: (r) => openEditor(TABLE.GiaiNgan, r.row)
   });
 }
 
@@ -178,10 +179,11 @@ function payTable(pays, showPkg) {
     { key: 'status', label: 'Trạng thái', render: (r) => badge(r.status, 'Thanh toán') }
   );
   return table(cols, pays, {
-    sortKey: 'requestDate', sortDir: -1,
+    sortKey: 'ipc', sortDir: -1,
     onRow: (r) => openRecord(TABLE.ThanhToan, r.row, {
-      title: `${r.packageId} · Đợt ${r.ipc}`, subtitle: r.id
-    })
+      title: `Đợt thanh toán ${r.ipc || '?'}`, subtitle: r.id
+    }),
+    onEdit: (r) => openEditor(TABLE.ThanhToan, r.row)
   });
 }
 

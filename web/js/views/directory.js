@@ -46,7 +46,7 @@ function contracts() {
       render: (r) => expiry(r.insuranceExpiry)
     },
     { key: 'status', label: 'Trạng thái', render: (r) => badge(r.status, 'Hợp đồng') }
-  ], state.contracts, { sortKey: 'id', onRow: openContract }), [addButton(TABLE.HopDong, { label: '+ Thêm hợp đồng' })]);
+  ], state.contracts, { sortKey: 'id', onRow: openContract, onEdit: (r) => openEditor(TABLE.HopDong, r.row) }), [addButton(TABLE.HopDong, { label: '+ Thêm hợp đồng' })]);
 }
 
 function expiry(date) {
@@ -116,7 +116,8 @@ function consultants() {
     }
   ], state.consultants, {
     sortKey: 'id',
-    onRow: (r) => openRecord(TABLE.TuVan, r.row, { title: r.name, subtitle: r.id })
+    onRow: (r) => openRecord(TABLE.TuVan, r.row, { title: r.name, subtitle: r.id }),
+    onEdit: (r) => openEditor(TABLE.TuVan, r.row)
   }), [addButton(TABLE.TuVan, { label: '+ Thêm đơn vị' })]);
 }
 
