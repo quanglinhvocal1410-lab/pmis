@@ -23,9 +23,9 @@ function s(tag, attrs, children) {
   return n;
 }
 
-function svg(height, children, cls) {
+function svg(height, children, cls, width = W) {
   const root = s('svg', {
-    viewBox: `0 0 ${W} ${height}`,
+    viewBox: `0 0 ${width} ${height}`,
     class: 'chart ' + (cls || ''),
     role: 'img',
     preserveAspectRatio: 'xMidYMid meet'
@@ -160,8 +160,8 @@ export function barChart({ labels, series, height = 260, yFmt = fmtShort, legend
 }
 
 /** Đồng hồ đo chỉ số quanh mốc 1,00 — dùng cho SPI / CPI. */
-export function gauge({ value, label, good = 1, lo = 0.7, hi = 1.3, height = 130 }) {
-  const cx = W / 2, cy = height - 14, r = 96;
+export function gauge({ value, label, good = 1, lo = 0.7, hi = 1.3, height = 160, width = 300 }) {
+  const cx = width / 2, cy = height - 20, r = 112;
   const clamp = Math.max(lo, Math.min(hi, value ?? lo));
   const frac = (clamp - lo) / (hi - lo);
   const a = Math.PI * (1 - frac);
@@ -171,7 +171,7 @@ export function gauge({ value, label, good = 1, lo = 0.7, hi = 1.3, height = 130
       d: `M ${cx + r * Math.cos(a0)} ${cy - r * Math.sin(a0)} A ${r} ${r} 0 0 1 ${cx + r * Math.cos(a1)} ${cy - r * Math.sin(a1)}`,
       fill: 'none',
       stroke: color,
-      'stroke-width': 14,
+      'stroke-width': 18,
       'stroke-linecap': 'butt',
       class: cls
     });
@@ -183,19 +183,19 @@ export function gauge({ value, label, good = 1, lo = 0.7, hi = 1.3, height = 130
     arc(goodFrac, 1, 'gauge-zone', 'var(--ok)'),
     s('line', {
       x1: cx, y1: cy,
-      x2: cx + (r - 20) * Math.cos(a), y2: cy - (r - 20) * Math.sin(a),
-      stroke: 'var(--fg)', 'stroke-width': 3, 'stroke-linecap': 'round'
+      x2: cx + (r - 22) * Math.cos(a), y2: cy - (r - 22) * Math.sin(a),
+      stroke: 'var(--fg)', 'stroke-width': 4, 'stroke-linecap': 'round'
     }),
-    s('circle', { cx, cy, r: 6, fill: 'var(--fg)' }),
-    s('text', { x: cx, y: cy - 34, class: 'gauge-value' }, value === null || value === undefined ? '—' : value.toFixed(2).replace('.', ',')),
-    s('text', { x: cx, y: cy + 2, class: 'gauge-label' }, label)
+    s('circle', { cx, cy, r: 7, fill: 'var(--fg)' }),
+    s('text', { x: cx, y: cy - 42, class: 'gauge-value' }, value === null || value === undefined ? '—' : value.toFixed(2).replace('.', ',')),
+    s('text', { x: cx, y: cy + 4, class: 'gauge-label' }, label)
   ];
-  return svg(height, kids, 'chart-gauge');
+  return svg(height, kids, 'chart-gauge', width);
 }
 
 /** Vòng tròn tỉ lệ hoàn thành. */
-export function donut({ segments, center, sub, height = 200 }) {
-  const cx = W / 2, cy = height / 2, r = 74, thick = 22;
+export function donut({ segments, center, sub, height = 200, width = 240 }) {
+  const cx = width / 2, cy = height / 2, r = 78, thick = 24;
   const total = segments.reduce((a, b) => a + Math.max(0, b.value), 0) || 1;
   let acc = 0;
   const kids = [
@@ -218,9 +218,9 @@ export function donut({ segments, center, sub, height = 200 }) {
     kids.push(el);
     acc += frac;
   });
-  if (center) kids.push(s('text', { x: cx, y: cy + 2, class: 'donut-center' }, center));
+  if (center) kids.push(s('text', { x: cx, y: cy + 4, class: 'donut-center' }, center));
   if (sub) kids.push(s('text', { x: cx, y: cy + 26, class: 'donut-sub' }, sub));
-  return svg(height, kids, 'chart-donut');
+  return svg(height, kids, 'chart-donut', width);
 }
 
 /**

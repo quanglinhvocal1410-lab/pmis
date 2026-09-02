@@ -789,8 +789,8 @@ input:disabled { opacity: .55; }
 .legend-name { flex: 1; font-weight: 560; }
 .legend-val { color: var(--muted); font-variant-numeric: tabular-nums; }
 
-.gauge-row { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
-.gauge-note { font-size: .78rem; color: var(--muted); text-align: center; }
+.gauge-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: flex-start; }
+.gauge-note { font-size: .88rem; font-weight: 600; color: var(--fg); text-align: center; margin-top: .4rem; }
 
 /* --------------------------------------------------- GÓI THẦU */
 
