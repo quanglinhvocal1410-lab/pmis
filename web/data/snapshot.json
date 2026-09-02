@@ -1,0 +1,5407 @@
+{
+ "source": "snapshot",
+ "spreadsheetId": "1Qij6W36SuuxSYGFSzhNUwgy_vpJCQjlxWlwuhTpGxMw",
+ "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1Qij6W36SuuxSYGFSzhNUwgy_vpJCQjlxWlwuhTpGxMw/edit",
+ "generatedAt": "2026-09-01T19:33:01.998Z",
+ "meta": [
+  {
+   "name": "0_README",
+   "idField": "MÔ HÌNH DỮ LIỆU DIM/FACT — HỆ THỐNG PMIS VUDP-HCM",
+   "headers": [
+    "MÔ HÌNH DỮ LIỆU DIM/FACT — HỆ THỐNG PMIS VUDP-HCM"
+   ],
+   "rows": 10
+  },
+  {
+   "name": "0_ERD",
+   "idField": "ERD — SƠ ĐỒ QUAN HỆ (STAR SCHEMA)",
+   "headers": [
+    "ERD — SƠ ĐỒ QUAN HỆ (STAR SCHEMA)"
+   ],
+   "rows": 1
+  },
+  {
+   "name": "0_Naming",
+   "idField": "QUY ƯỚC ĐẶT TÊN",
+   "headers": [
+    "QUY ƯỚC ĐẶT TÊN"
+   ],
+   "rows": 22
+  },
+  {
+   "name": "0_DataDictionary",
+   "idField": "STT",
+   "headers": [
+    "STT",
+    "Bảng",
+    "Trường",
+    "Kiểu",
+    "Khóa",
+    "Mô tả",
+    "Ví dụ"
+   ],
+   "rows": 333
+  },
+  {
+   "name": "Dim_DuAn",
+   "idField": "IDDuAn",
+   "headers": [
+    "IDDuAn",
+    "MaDuAn",
+    "TenDuAn",
+    "ChuDauTu",
+    "BanQLDA",
+    "NguonVon",
+    "NhaTaiTro",
+    "TongMucDauTu_VND",
+    "TongMucDauTu_USD",
+    "NgayPheDuyet",
+    "NgayKhoiCong",
+    "NgayHoanThanhKeHoach",
+    "GiaiDoan",
+    "TrangThai",
+    "GhiChu"
+   ],
+   "rows": 1
+  },
+  {
+   "name": "Dim_GoiThau",
+   "idField": "IDGoiThau",
+   "headers": [
+    "IDGoiThau",
+    "MaGoiThau",
+    "TenGoiThau",
+    "IDDuAn",
+    "LoaiHopDong",
+    "HinhThucLuaChonNhaThau",
+    "IDNhaThau",
+    "IDTuVanGiamSat",
+    "IDTuVanThietKe",
+    "GiaGoiThau_VND",
+    "GiaTrungThau_VND",
+    "GiaTriHopDong_VND",
+    "NgayKhoiCongKeHoach",
+    "NgayHoanThanhKeHoach",
+    "ThoiHanBaoHanh_Thang",
+    "GiaiDoanVongDoi",
+    "TrangThai",
+    "NguoiPhuTrach",
+    "URLThuMucDrive",
+    "GhiChu"
+   ],
+   "rows": 5
+  },
+  {
+   "name": "Dim_HopDong",
+   "idField": "IDHopDong",
+   "headers": [
+    "IDHopDong",
+    "SoHopDong",
+    "IDGoiThau",
+    "LoaiVanBan",
+    "IDHopDongGoc",
+    "TenHopDong",
+    "NgayKy",
+    "NgayHieuLuc",
+    "NgayKetThuc",
+    "GiaTri_VND",
+    "TamUng_Percent",
+    "GiuLaiBaoHanh_Percent",
+    "DieuKienThanhToan",
+    "ChuTheKyA",
+    "ChuTheKyB",
+    "IDHoSoNguon",
+    "URLDrive",
+    "TrangThai",
+    "GhiChu"
+   ],
+   "rows": 7
+  },
+  {
+   "name": "Dim_NhaThau",
+   "idField": "IDNhaThau",
+   "headers": [
+    "IDNhaThau",
+    "TenNhaThau",
+    "TenViet_Tat",
+    "LoaiNhaThau",
+    "QuocGia",
+    "MaSoThue",
+    "NguoiDaiDien",
+    "Email",
+    "DienThoai",
+    "DiaChi",
+    "NangLuc_ChuyenMon",
+    "SoDuAnDaLam",
+    "GhiChu"
+   ],
+   "rows": 5
+  },
+  {
+   "name": "Dim_TuVan",
+   "idField": "IDTuVan",
+   "headers": [
+    "IDTuVan",
+    "TenTuVan",
+    "LoaiTuVan",
+    "QuocGia",
+    "MaSoThue",
+    "NguoiDaiDien",
+    "TruongDoan",
+    "Email",
+    "DienThoai",
+    "DiaChi",
+    "ChuyenMon",
+    "GhiChu"
+   ],
+   "rows": 5
+  },
+  {
+   "name": "Dim_ThoiGian",
+   "idField": "IDNgay",
+   "headers": [
+    "IDNgay",
+    "Nam",
+    "Quy",
+    "Thang",
+    "TenThang",
+    "Tuan",
+    "NgayTrongTuan",
+    "LaCuoiThang",
+    "LaLamViec",
+    "NamTaiChinh"
+   ],
+   "rows": 5
+  },
+  {
+   "name": "Dim_HoSo",
+   "idField": "IDHoSo",
+   "headers": [
+    "IDHoSo",
+    "IDDuAn",
+    "IDGoiThau",
+    "IDHopDong",
+    "NhomHoSo",
+    "LoaiHoSo",
+    "TieuDe",
+    "SoHieu",
+    "PhienBan",
+    "NgayPhatHanh",
+    "NgayHieuLuc",
+    "TrangThai",
+    "DonViPhatHanh",
+    "IDCongViecLienQuan",
+    "IDThanhToanLienQuan",
+    "IDDieuKhoanLienQuan",
+    "DuongDanDrive",
+    "MaFileDrive",
+    "TrangThaiOCR",
+    "TrangThaiTrichXuatAI",
+    "NgayCapNhat"
+   ],
+   "rows": 4
+  },
+  {
+   "name": "Dim_BOQ",
+   "idField": "IDHangMucBOQ",
+   "headers": [
+    "IDHangMucBOQ",
+    "IDGoiThau",
+    "IDHopDong",
+    "MaChuong",
+    "MaHangMuc",
+    "MoTa",
+    "DonVi",
+    "KhoiLuong_HD",
+    "DonGia_HD",
+    "ThanhTien_HD",
+    "NhomChiPhi",
+    "MucCa",
+    "GhiChu"
+   ],
+   "rows": 4
+  },
+  {
+   "name": "Dim_HoatDong",
+   "idField": "IDHoatDong",
+   "headers": [
+    "IDHoatDong",
+    "IDGoiThau",
+    "MaWBS",
+    "TenHoatDong",
+    "IDHoatDongCha",
+    "CapDo",
+    "LoaiHoatDong",
+    "IDHangMucBOQLienQuan",
+    "NgayBatDauBaseline",
+    "NgayKetThucBaseline",
+    "ThoiLuong_Ngay",
+    "TrongSo_Percent",
+    "GiaTriKeHoach_PV",
+    "NguoiPhuTrach",
+    "TrangThai"
+   ],
+   "rows": 4
+  },
+  {
+   "name": "Dim_DieuKhoan",
+   "idField": "IDDieuKhoan",
+   "headers": [
+    "IDDieuKhoan",
+    "IDHopDong",
+    "IDGoiThau",
+    "SoDieu",
+    "TieuDe",
+    "LoaiDieuKhoan",
+    "NghiaVuBenA",
+    "NghiaVuBenB",
+    "HanChotThucHien",
+    "TrangThai",
+    "IDHoSoNguon",
+    "TrangSoTrong_File",
+    "DoTinCay_AI",
+    "PhienDich_AI",
+    "GhiChu"
+   ],
+   "rows": 3
+  },
+  {
+   "name": "Dim_CongViec",
+   "idField": "IDCongViec",
+   "headers": [
+    "IDCongViec",
+    "TieuDe",
+    "MoTa",
+    "IDGoiThau",
+    "IDHopDong",
+    "IDDieuKhoanLienQuan",
+    "IDHoSoLienQuan",
+    "IDThanhToanLienQuan",
+    "MucDoUuTien",
+    "TrangThai",
+    "NguoiPhuTrach",
+    "NgayBatDau",
+    "HanChot",
+    "NgayTao",
+    "NgayHoanThanh",
+    "NguonTao",
+    "GhiChu"
+   ],
+   "rows": 3
+  },
+  {
+   "name": "Dim_TrangThai",
+   "idField": "IDTrangThai",
+   "headers": [
+    "IDTrangThai",
+    "NhomTrangThai",
+    "TenTrangThai",
+    "ThuTuSapXep",
+    "MauHex",
+    "MoTa"
+   ],
+   "rows": 19
+  },
+  {
+   "name": "Dim_RuiRo",
+   "idField": "IDRuiRo",
+   "headers": [
+    "IDRuiRo",
+    "NhomRuiRo",
+    "TenRuiRo",
+    "MoTa",
+    "TacDongTiemAn",
+    "MucDoTacDong_MacDinh",
+    "XacSuat_MacDinh",
+    "BienPhapPhongNgua",
+    "BienPhapUngPho",
+    "NguoiPhuTrach_MacDinh"
+   ],
+   "rows": 5
+  },
+  {
+   "name": "Fact_TienDo",
+   "idField": "IDBanGhi",
+   "headers": [
+    "IDBanGhi",
+    "IDGoiThau",
+    "IDHoatDong",
+    "IDHangMucBOQ",
+    "IDNgayBaoCao",
+    "KyBaoCao",
+    "TienDo_KeHoach_Percent",
+    "TienDo_ThucTe_Percent",
+    "SaiLech_Percent",
+    "KhoiLuong_ThucHien_Kỳ",
+    "KhoiLuong_LuyKe",
+    "GiaTri_ThucHien_KyVND",
+    "GiaTri_LuyKe_VND",
+    "NgayCapNhat",
+    "NguoiCapNhat",
+    "IDHoSoNguon",
+    "GhiChu"
+   ],
+   "rows": 6
+  },
+  {
+   "name": "Fact_ThanhToan",
+   "idField": "IDThanhToan",
+   "headers": [
+    "IDThanhToan",
+    "SoDot",
+    "LoaiThanhToan",
+    "IDGoiThau",
+    "IDHopDong",
+    "IDNhaThau",
+    "IDNgayTrinh",
+    "IDNgayDuyet",
+    "IDNgayThanhToan",
+    "GiaTri_DeNghi_VND",
+    "GiaTri_ChungNhan_VND",
+    "GiaTri_DuocDuyet_VND",
+    "TamUng_KhauTru_VND",
+    "GiuLai_BaoHanh_VND",
+    "Thue_KhauTru_VND",
+    "PhatLD_VND",
+    "GiaTri_ThanhToan_ThucVND",
+    "TrangThai",
+    "IDHoSoNghiemThu",
+    "IDHoSoThanhToan",
+    "GhiChu"
+   ],
+   "rows": 5
+  },
+  {
+   "name": "Fact_GiaiNgan",
+   "idField": "IDBanGhi",
+   "headers": [
+    "IDBanGhi",
+    "IDGoiThau",
+    "IDHopDong",
+    "IDNgay",
+    "KyBaoCao",
+    "NguonVon",
+    "KeHoachThang_VND",
+    "KeHoachLuyKe_VND",
+    "ThucTeThang_VND",
+    "ThucTeLuyKe_VND",
+    "SaiLech_VND",
+    "TyLeHoanThanh_KH",
+    "GhiChu"
+   ],
+   "rows": 5
+  },
+  {
+   "name": "Fact_NganSach",
+   "idField": "IDBanGhi",
+   "headers": [
+    "IDBanGhi",
+    "IDGoiThau",
+    "IDHopDong",
+    "NamKeHoach",
+    "NguonVon",
+    "LoaiNganSach",
+    "GiaTri_VND",
+    "NgayPheDuyet",
+    "SoQuyetDinh",
+    "IDHoSoNguon",
+    "GhiChu"
+   ],
+   "rows": 5
+  },
+  {
+   "name": "Fact_EVM",
+   "idField": "IDBanGhi",
+   "headers": [
+    "IDBanGhi",
+    "IDGoiThau",
+    "IDNgay",
+    "KyBaoCao",
+    "BAC_VND",
+    "PV_VND",
+    "EV_VND",
+    "AC_VND",
+    "SV_VND",
+    "CV_VND",
+    "SPI",
+    "CPI",
+    "EAC_VND",
+    "ETC_VND",
+    "VAC_VND",
+    "TrangThai_DuLieu",
+    "GhiChu"
+   ],
+   "rows": 5
+  },
+  {
+   "name": "Fact_CongViec",
+   "idField": "IDSuKien",
+   "headers": [
+    "IDSuKien",
+    "IDCongViec",
+    "IDGoiThau",
+    "LoaiSuKien",
+    "IDNgaySuKien",
+    "ThoiDiem",
+    "TrangThai_Truoc",
+    "TrangThai_Sau",
+    "Owner_Truoc",
+    "Owner_Sau",
+    "NguoiThucHien",
+    "GhiChu"
+   ],
+   "rows": 2
+  },
+  {
+   "name": "Fact_HopDong_Event",
+   "idField": "IDSuKien",
+   "headers": [
+    "IDSuKien",
+    "IDHopDong",
+    "IDGoiThau",
+    "LoaiSuKien",
+    "MoTa",
+    "IDNgay",
+    "GiaTriTacDong_VND",
+    "IDDieuKhoanLienQuan",
+    "IDHoSoNguon",
+    "TrangThai",
+    "GhiChu"
+   ],
+   "rows": 5
+  },
+  {
+   "name": "Fact_PhatSinh",
+   "idField": "IDPhatSinh",
+   "headers": [
+    "IDPhatSinh",
+    "IDGoiThau",
+    "IDHopDong",
+    "IDHopDongPhuLuc",
+    "LoaiPhatSinh",
+    "NguyenNhan",
+    "MoTa",
+    "IDNgayPhatHien",
+    "IDNgayDeNghi",
+    "IDNgayDuyet",
+    "GiaTri_DeNghi_VND",
+    "GiaTri_DuyetVND",
+    "TrangThai",
+    "IDHoSoNguon",
+    "GhiChu"
+   ],
+   "rows": 3
+  },
+  {
+   "name": "Fact_RuiRo",
+   "idField": "IDSuKien",
+   "headers": [
+    "IDSuKien",
+    "IDRuiRo",
+    "IDGoiThau",
+    "IDHopDong",
+    "IDNgayPhatHien",
+    "MoTa_SuKien",
+    "MucDoNghiemTrong",
+    "TacDong_Diem",
+    "XacSuat_Diem",
+    "Diem_RuiRo",
+    "NguonCanhBao",
+    "TrangThai",
+    "NguoiPhuTrach",
+    "HanhDong_KhuyenNghi",
+    "IDCongViec_TaoRa",
+    "IDHoSoNguon",
+    "PhanLoai_AI",
+    "GhiChu"
+   ],
+   "rows": 3
+  },
+  {
+   "name": "Fact_TrangThai_HoSo",
+   "idField": "IDSuKien",
+   "headers": [
+    "IDSuKien",
+    "IDHoSo",
+    "IDGoiThau",
+    "IDNgay",
+    "LoaiSuKien",
+    "TrangThai_Truoc",
+    "TrangThai_Sau",
+    "PhienBan_Truoc",
+    "PhienBan_Sau",
+    "NguoiThucHien",
+    "NguonThucHien",
+    "GhiChu"
+   ],
+   "rows": 2
+  }
+ ],
+ "tables": {
+  "0_README": [
+   {
+    "MÔ HÌNH DỮ LIỆU DIM/FACT — HỆ THỐNG PMIS VUDP-HCM": "Star Schema chuẩn Power BI — 13 Dim + 10 Fact — theo CLAUDE.md §22"
+   },
+   {
+    "MÔ HÌNH DỮ LIỆU DIM/FACT — HỆ THỐNG PMIS VUDP-HCM": "Mục đích"
+   },
+   {
+    "MÔ HÌNH DỮ LIỆU DIM/FACT — HỆ THỐNG PMIS VUDP-HCM": "Bối cảnh dự án"
+   },
+   {
+    "MÔ HÌNH DỮ LIỆU DIM/FACT — HỆ THỐNG PMIS VUDP-HCM": "Cấu trúc workbook"
+   },
+   {
+    "MÔ HÌNH DỮ LIỆU DIM/FACT — HỆ THỐNG PMIS VUDP-HCM": "Quy ước cột trong mỗi sheet"
+   },
+   {
+    "MÔ HÌNH DỮ LIỆU DIM/FACT — HỆ THỐNG PMIS VUDP-HCM": "Cách sử dụng"
+   },
+   {
+    "MÔ HÌNH DỮ LIỆU DIM/FACT — HỆ THỐNG PMIS VUDP-HCM": "Nguyên tắc ID (§6.2)"
+   },
+   {
+    "MÔ HÌNH DỮ LIỆU DIM/FACT — HỆ THỐNG PMIS VUDP-HCM": "Nguyên tắc Documents-are-Data (§6.3)"
+   },
+   {
+    "MÔ HÌNH DỮ LIỆU DIM/FACT — HỆ THỐNG PMIS VUDP-HCM": "Nguyên tắc AI (§24-25)"
+   },
+   {
+    "MÔ HÌNH DỮ LIỆU DIM/FACT — HỆ THỐNG PMIS VUDP-HCM": "Roadmap triển khai (§39)"
+   }
+  ],
+  "0_ERD": [
+   {
+    "ERD — SƠ ĐỒ QUAN HỆ (STAR SCHEMA)": "QUAN HỆ CHÍNH (FK → PK)  |  Cardinality: N → 1\n\n┌─────────────────────────────────────────────────────────────────────────────┐\n│                            Dim_DuAn (1)                                       │\n│                                 ▲                                              │\n│                                 │ IDDuAn                                       │\n│                                 │                                              │\n│                            Dim_GoiThau (5)                                    │\n│         ┌──────────────────────┼──────────────────────────────────┐          │\n│         │                      │                                  │           │\n│         ▼                      ▼                                  ▼           │\n│   Dim_HopDong (N)         Dim_HoSo (N)                  Dim_CongViec (N)     │\n│   ├─ IDHopDongGoc          │                                                  │\n│   │  (self-ref)            │                                                  │\n│   ▼                        ▼                                                  │\n│   Dim_DieuKhoan (N)   Dim_BOQ (N) ──── Dim_HoatDong (N)                      │\n│                                                                                │\n└─────────────────────────────────────────────────────────────────────────────┘\n\nDim_NhaThau, Dim_TuVan (master độc lập) ← Dim_GoiThau tham chiếu\nDim_TrangThai, Dim_RuiRo (master độc lập) ← các Fact tham chiếu\nDim_ThoiGian ← TẤT CẢ Fact tham chiếu qua IDNgay*\n\n\nCÁC QUAN HỆ FACT → DIM:\n\nFact_TienDo         → Dim_GoiThau, Dim_HoatDong, Dim_BOQ, Dim_ThoiGian, Dim_HoSo\nFact_ThanhToan      → Dim_GoiThau, Dim_HopDong, Dim_NhaThau, Dim_ThoiGian (x3), Dim_HoSo (x2)\nFact_GiaiNgan       → Dim_GoiThau, Dim_HopDong, Dim_ThoiGian\nFact_NganSach       → Dim_GoiThau, Dim_HopDong, Dim_HoSo\nFact_EVM            → Dim_GoiThau, Dim_ThoiGian\nFact_CongViec       → Dim_CongViec, Dim_GoiThau, Dim_ThoiGian\nFact_HopDong_Event  → Dim_HopDong, Dim_GoiThau, Dim_DieuKhoan, Dim_ThoiGian, Dim_HoSo\nFact_PhatSinh       → Dim_GoiThau, Dim_HopDong (x2: gốc + PL), Dim_ThoiGian (x3), Dim_HoSo\nFact_RuiRo          → Dim_RuiRo, Dim_GoiThau, Dim_HopDong, Dim_ThoiGian, Dim_CongViec, Dim_HoSo\nFact_TrangThai_HoSo → Dim_HoSo, Dim_GoiThau, Dim_ThoiGian\n\n\nNGUYÊN TẮC POWER BI:\n- Filter direction: SINGLE (Dim → Fact). Chỉ dùng BOTH khi thực sự cần.\n- Không tạo relationship trực tiếp Fact ↔ Fact.\n- Nếu 1 Fact có >1 FK về cùng 1 Dim (vd Fact_ThanhToan có 3 FK ngày về Dim_ThoiGian):\n  - Chỉ ACTIVE 1 relationship\n  - Các quan hệ còn lại đặt INACTIVE, kích hoạt trong DAX bằng USERELATIONSHIP()\n- Ẩn các cột ID kỹ thuật khỏi report view (View > Hide from report view)"
+   }
+  ],
+  "0_Naming": [
+   {
+    "QUY ƯỚC ĐẶT TÊN": "Đối tượng"
+   },
+   {
+    "QUY ƯỚC ĐẶT TÊN": "Sheet Dim"
+   },
+   {
+    "QUY ƯỚC ĐẶT TÊN": "Sheet Fact"
+   },
+   {
+    "QUY ƯỚC ĐẶT TÊN": "Cột PK"
+   },
+   {
+    "QUY ƯỚC ĐẶT TÊN": "Cột FK"
+   },
+   {
+    "QUY ƯỚC ĐẶT TÊN": "Cột Date"
+   },
+   {
+    "QUY ƯỚC ĐẶT TÊN": "Cột Money VND"
+   },
+   {
+    "QUY ƯỚC ĐẶT TÊN": "Cột Money USD"
+   },
+   {
+    "QUY ƯỚC ĐẶT TÊN": "Cột Percent"
+   },
+   {
+    "QUY ƯỚC ĐẶT TÊN": "Prefix ID Dự án"
+   },
+   {
+    "QUY ƯỚC ĐẶT TÊN": "Prefix ID Gói"
+   },
+   {
+    "QUY ƯỚC ĐẶT TÊN": "Prefix ID HĐ"
+   },
+   {
+    "QUY ƯỚC ĐẶT TÊN": "Prefix ID BOQ"
+   },
+   {
+    "QUY ƯỚC ĐẶT TÊN": "Prefix ID WBS"
+   },
+   {
+    "QUY ƯỚC ĐẶT TÊN": "Prefix ID Điều khoản"
+   },
+   {
+    "QUY ƯỚC ĐẶT TÊN": "Prefix ID Hồ sơ"
+   },
+   {
+    "QUY ƯỚC ĐẶT TÊN": "Prefix ID Công việc"
+   },
+   {
+    "QUY ƯỚC ĐẶT TÊN": "Prefix ID Thanh toán"
+   },
+   {
+    "QUY ƯỚC ĐẶT TÊN": "Prefix ID Nhà thầu"
+   },
+   {
+    "QUY ƯỚC ĐẶT TÊN": "Prefix ID Tư vấn"
+   },
+   {
+    "QUY ƯỚC ĐẶT TÊN": "Prefix ID Rủi ro"
+   },
+   {
+    "QUY ƯỚC ĐẶT TÊN": "Prefix ID Sự kiện (Fact)"
+   }
+  ],
+  "0_DataDictionary": [
+   {
+    "STT": 1,
+    "Bảng": "Dim_DuAn",
+    "Trường": "IDDuAn",
+    "Kiểu": "TEXT PK",
+    "Khóa": "PK",
+    "Mô tả": "Mã dự án - Primary Key",
+    "Ví dụ": "PRJ-VUDPHCM"
+   },
+   {
+    "STT": 2,
+    "Bảng": "Dim_DuAn",
+    "Trường": "MaDuAn",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Mã dự án theo QĐ phê duyệt",
+    "Ví dụ": "VUDP-HCM"
+   },
+   {
+    "STT": 3,
+    "Bảng": "Dim_DuAn",
+    "Trường": "TenDuAn",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Tên đầy đủ của dự án",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 4,
+    "Bảng": "Dim_DuAn",
+    "Trường": "ChuDauTu",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Chủ đầu tư",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 5,
+    "Bảng": "Dim_DuAn",
+    "Trường": "BanQLDA",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Ban QLDA thực hiện",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 6,
+    "Bảng": "Dim_DuAn",
+    "Trường": "NguonVon",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Nguồn vốn (ODA / Ngân sách / Vay ưu đãi / Đối ứng)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 7,
+    "Bảng": "Dim_DuAn",
+    "Trường": "NhaTaiTro",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Nhà tài trợ (WB, ADB, JICA...)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 8,
+    "Bảng": "Dim_DuAn",
+    "Trường": "TongMucDauTu_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Tổng mức đầu tư (VNĐ)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 9,
+    "Bảng": "Dim_DuAn",
+    "Trường": "TongMucDauTu_USD",
+    "Kiểu": "MONEY_USD",
+    "Khóa": "",
+    "Mô tả": "Tổng mức đầu tư (USD) - dự án ODA",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 10,
+    "Bảng": "Dim_DuAn",
+    "Trường": "NgayPheDuyet",
+    "Kiểu": "DATE",
+    "Khóa": "",
+    "Mô tả": "Ngày phê duyệt dự án",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 11,
+    "Bảng": "Dim_DuAn",
+    "Trường": "NgayKhoiCong",
+    "Kiểu": "DATE",
+    "Khóa": "",
+    "Mô tả": "Ngày khởi công",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 12,
+    "Bảng": "Dim_DuAn",
+    "Trường": "NgayHoanThanhKeHoach",
+    "Kiểu": "DATE",
+    "Khóa": "",
+    "Mô tả": "Ngày hoàn thành theo kế hoạch",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 13,
+    "Bảng": "Dim_DuAn",
+    "Trường": "GiaiDoan",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Giai đoạn hiện tại (Chuẩn bị / Thực hiện / Kết thúc)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 14,
+    "Bảng": "Dim_DuAn",
+    "Trường": "TrangThai",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Trạng thái dự án",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 15,
+    "Bảng": "Dim_DuAn",
+    "Trường": "GhiChu",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Ghi chú",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 16,
+    "Bảng": "Dim_GoiThau",
+    "Trường": "IDGoiThau",
+    "Kiểu": "TEXT PK",
+    "Khóa": "PK",
+    "Mô tả": "Mã gói thầu - Primary Key",
+    "Ví dụ": "PKG-CW01"
+   },
+   {
+    "STT": 17,
+    "Bảng": "Dim_GoiThau",
+    "Trường": "MaGoiThau",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Mã gói thầu công khai (CW-01...)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 18,
+    "Bảng": "Dim_GoiThau",
+    "Trường": "TenGoiThau",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Tên gói thầu",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 19,
+    "Bảng": "Dim_GoiThau",
+    "Trường": "IDDuAn",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "Khóa ngoại đến Dim_DuAn",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 20,
+    "Bảng": "Dim_GoiThau",
+    "Trường": "LoaiHopDong",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Loại HĐ (Trọn gói / Đơn giá / Chi phí hoàn trả)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 21,
+    "Bảng": "Dim_GoiThau",
+    "Trường": "HinhThucLuaChonNhaThau",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Đấu thầu rộng rãi / Chỉ định thầu / Chào hàng cạnh tranh",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 22,
+    "Bảng": "Dim_GoiThau",
+    "Trường": "IDNhaThau",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "Nhà thầu chính - FK Dim_NhaThau",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 23,
+    "Bảng": "Dim_GoiThau",
+    "Trường": "IDTuVanGiamSat",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "Tư vấn giám sát - FK Dim_TuVan",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 24,
+    "Bảng": "Dim_GoiThau",
+    "Trường": "IDTuVanThietKe",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "Tư vấn thiết kế - FK Dim_TuVan",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 25,
+    "Bảng": "Dim_GoiThau",
+    "Trường": "GiaGoiThau_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Giá gói thầu phê duyệt",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 26,
+    "Bảng": "Dim_GoiThau",
+    "Trường": "GiaTrungThau_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Giá trúng thầu",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 27,
+    "Bảng": "Dim_GoiThau",
+    "Trường": "GiaTriHopDong_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Giá trị hợp đồng hiện tại (đã tính điều chỉnh)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 28,
+    "Bảng": "Dim_GoiThau",
+    "Trường": "NgayKhoiCongKeHoach",
+    "Kiểu": "DATE",
+    "Khóa": "",
+    "Mô tả": "Ngày khởi công theo hợp đồng",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 29,
+    "Bảng": "Dim_GoiThau",
+    "Trường": "NgayHoanThanhKeHoach",
+    "Kiểu": "DATE",
+    "Khóa": "",
+    "Mô tả": "Ngày hoàn thành theo hợp đồng",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 30,
+    "Bảng": "Dim_GoiThau",
+    "Trường": "ThoiHanBaoHanh_Thang",
+    "Kiểu": "INT",
+    "Khóa": "",
+    "Mô tả": "Thời hạn bảo hành (tháng)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 31,
+    "Bảng": "Dim_GoiThau",
+    "Trường": "GiaiDoanVongDoi",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Giai đoạn (Chuẩn bị / Đấu thầu / Thi công / Bảo hành / Quyết toán)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 32,
+    "Bảng": "Dim_GoiThau",
+    "Trường": "TrangThai",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Trạng thái tổng",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 33,
+    "Bảng": "Dim_GoiThau",
+    "Trường": "NguoiPhuTrach",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Người phụ trách gói",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 34,
+    "Bảng": "Dim_GoiThau",
+    "Trường": "URLThuMucDrive",
+    "Kiểu": "URL",
+    "Khóa": "",
+    "Mô tả": "Link Google Drive thư mục gói thầu",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 35,
+    "Bảng": "Dim_GoiThau",
+    "Trường": "GhiChu",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Ghi chú",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 36,
+    "Bảng": "Dim_HopDong",
+    "Trường": "IDHopDong",
+    "Kiểu": "TEXT PK",
+    "Khóa": "PK",
+    "Mô tả": "Mã hợp đồng - PK",
+    "Ví dụ": "HD-CW01-01"
+   },
+   {
+    "STT": 37,
+    "Bảng": "Dim_HopDong",
+    "Trường": "SoHopDong",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Số hợp đồng theo văn bản",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 38,
+    "Bảng": "Dim_HopDong",
+    "Trường": "IDGoiThau",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_GoiThau",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 39,
+    "Bảng": "Dim_HopDong",
+    "Trường": "LoaiVanBan",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "HĐ gốc / Phụ lục / Điều chỉnh",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 40,
+    "Bảng": "Dim_HopDong",
+    "Trường": "IDHopDongGoc",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "Nếu là phụ lục, trỏ về HĐ gốc",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 41,
+    "Bảng": "Dim_HopDong",
+    "Trường": "TenHopDong",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Tên/tiêu đề hợp đồng",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 42,
+    "Bảng": "Dim_HopDong",
+    "Trường": "NgayKy",
+    "Kiểu": "DATE",
+    "Khóa": "",
+    "Mô tả": "Ngày ký",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 43,
+    "Bảng": "Dim_HopDong",
+    "Trường": "NgayHieuLuc",
+    "Kiểu": "DATE",
+    "Khóa": "",
+    "Mô tả": "Ngày có hiệu lực",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 44,
+    "Bảng": "Dim_HopDong",
+    "Trường": "NgayKetThuc",
+    "Kiểu": "DATE",
+    "Khóa": "",
+    "Mô tả": "Ngày kết thúc theo HĐ",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 45,
+    "Bảng": "Dim_HopDong",
+    "Trường": "GiaTri_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Giá trị hợp đồng/phụ lục",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 46,
+    "Bảng": "Dim_HopDong",
+    "Trường": "TamUng_Percent",
+    "Kiểu": "PERCENT",
+    "Khóa": "",
+    "Mô tả": "Tỷ lệ tạm ứng theo HĐ (%)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 47,
+    "Bảng": "Dim_HopDong",
+    "Trường": "GiuLaiBaoHanh_Percent",
+    "Kiểu": "PERCENT",
+    "Khóa": "",
+    "Mô tả": "Tỷ lệ giữ lại bảo hành (%)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 48,
+    "Bảng": "Dim_HopDong",
+    "Trường": "DieuKienThanhToan",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Tóm tắt điều kiện thanh toán",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 49,
+    "Bảng": "Dim_HopDong",
+    "Trường": "ChuTheKyA",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Bên A - Chủ đầu tư",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 50,
+    "Bảng": "Dim_HopDong",
+    "Trường": "ChuTheKyB",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Bên B - Nhà thầu",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 51,
+    "Bảng": "Dim_HopDong",
+    "Trường": "IDHoSoNguon",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HoSo - file HĐ trong Drive",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 52,
+    "Bảng": "Dim_HopDong",
+    "Trường": "URLDrive",
+    "Kiểu": "URL",
+    "Khóa": "",
+    "Mô tả": "Link file HĐ trên Google Drive",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 53,
+    "Bảng": "Dim_HopDong",
+    "Trường": "TrangThai",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Hiệu lực / Hết hạn / Chấm dứt",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 54,
+    "Bảng": "Dim_HopDong",
+    "Trường": "GhiChu",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Ghi chú",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 55,
+    "Bảng": "Dim_NhaThau",
+    "Trường": "IDNhaThau",
+    "Kiểu": "TEXT PK",
+    "Khóa": "PK",
+    "Mô tả": "Mã nhà thầu",
+    "Ví dụ": "NT-001"
+   },
+   {
+    "STT": 56,
+    "Bảng": "Dim_NhaThau",
+    "Trường": "TenNhaThau",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Tên đầy đủ pháp nhân",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 57,
+    "Bảng": "Dim_NhaThau",
+    "Trường": "TenViet_Tat",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Tên viết tắt/thương hiệu",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 58,
+    "Bảng": "Dim_NhaThau",
+    "Trường": "LoaiNhaThau",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Chính / Phụ / Liên danh",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 59,
+    "Bảng": "Dim_NhaThau",
+    "Trường": "QuocGia",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Quốc gia đăng ký",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 60,
+    "Bảng": "Dim_NhaThau",
+    "Trường": "MaSoThue",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "MST",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 61,
+    "Bảng": "Dim_NhaThau",
+    "Trường": "NguoiDaiDien",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Người đại diện pháp luật",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 62,
+    "Bảng": "Dim_NhaThau",
+    "Trường": "Email",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Email liên hệ",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 63,
+    "Bảng": "Dim_NhaThau",
+    "Trường": "DienThoai",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Điện thoại liên hệ",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 64,
+    "Bảng": "Dim_NhaThau",
+    "Trường": "DiaChi",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Địa chỉ trụ sở",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 65,
+    "Bảng": "Dim_NhaThau",
+    "Trường": "NangLuc_ChuyenMon",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Chuyên môn chính",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 66,
+    "Bảng": "Dim_NhaThau",
+    "Trường": "SoDuAnDaLam",
+    "Kiểu": "INT",
+    "Khóa": "",
+    "Mô tả": "Số dự án đã tham gia (tham chiếu)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 67,
+    "Bảng": "Dim_NhaThau",
+    "Trường": "GhiChu",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Ghi chú",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 68,
+    "Bảng": "Dim_TuVan",
+    "Trường": "IDTuVan",
+    "Kiểu": "TEXT PK",
+    "Khóa": "PK",
+    "Mô tả": "Mã tư vấn",
+    "Ví dụ": "TV-CS-001"
+   },
+   {
+    "STT": 69,
+    "Bảng": "Dim_TuVan",
+    "Trường": "TenTuVan",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Tên đầy đủ",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 70,
+    "Bảng": "Dim_TuVan",
+    "Trường": "LoaiTuVan",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Giám sát / Thiết kế / QLDA / Kiểm định / Đấu thầu",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 71,
+    "Bảng": "Dim_TuVan",
+    "Trường": "QuocGia",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Quốc gia đăng ký",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 72,
+    "Bảng": "Dim_TuVan",
+    "Trường": "MaSoThue",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "MST",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 73,
+    "Bảng": "Dim_TuVan",
+    "Trường": "NguoiDaiDien",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Người đại diện",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 74,
+    "Bảng": "Dim_TuVan",
+    "Trường": "TruongDoan",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Trưởng đoàn tư vấn",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 75,
+    "Bảng": "Dim_TuVan",
+    "Trường": "Email",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Email liên hệ",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 76,
+    "Bảng": "Dim_TuVan",
+    "Trường": "DienThoai",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Điện thoại",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 77,
+    "Bảng": "Dim_TuVan",
+    "Trường": "DiaChi",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Địa chỉ",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 78,
+    "Bảng": "Dim_TuVan",
+    "Trường": "ChuyenMon",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Chuyên môn chính",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 79,
+    "Bảng": "Dim_TuVan",
+    "Trường": "GhiChu",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Ghi chú",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 80,
+    "Bảng": "Dim_ThoiGian",
+    "Trường": "IDNgay",
+    "Kiểu": "DATE PK",
+    "Khóa": "PK",
+    "Mô tả": "Ngày - PK (YYYY-MM-DD)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 81,
+    "Bảng": "Dim_ThoiGian",
+    "Trường": "Nam",
+    "Kiểu": "INT",
+    "Khóa": "",
+    "Mô tả": "Năm",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 82,
+    "Bảng": "Dim_ThoiGian",
+    "Trường": "Quy",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Quý (Q1..Q4)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 83,
+    "Bảng": "Dim_ThoiGian",
+    "Trường": "Thang",
+    "Kiểu": "INT",
+    "Khóa": "",
+    "Mô tả": "Tháng (1-12)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 84,
+    "Bảng": "Dim_ThoiGian",
+    "Trường": "TenThang",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Tên tháng (VN)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 85,
+    "Bảng": "Dim_ThoiGian",
+    "Trường": "Tuan",
+    "Kiểu": "INT",
+    "Khóa": "",
+    "Mô tả": "Số tuần trong năm (ISO)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 86,
+    "Bảng": "Dim_ThoiGian",
+    "Trường": "NgayTrongTuan",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Thứ hai..Chủ nhật",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 87,
+    "Bảng": "Dim_ThoiGian",
+    "Trường": "LaCuoiThang",
+    "Kiểu": "BOOL",
+    "Khóa": "",
+    "Mô tả": "TRUE nếu là ngày cuối tháng",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 88,
+    "Bảng": "Dim_ThoiGian",
+    "Trường": "LaLamViec",
+    "Kiểu": "BOOL",
+    "Khóa": "",
+    "Mô tả": "TRUE nếu là ngày làm việc VN",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 89,
+    "Bảng": "Dim_ThoiGian",
+    "Trường": "NamTaiChinh",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "FY - dự án ODA WB thường theo dương lịch",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 90,
+    "Bảng": "Dim_HoSo",
+    "Trường": "IDHoSo",
+    "Kiểu": "TEXT PK",
+    "Khóa": "PK",
+    "Mô tả": "Mã hồ sơ",
+    "Ví dụ": "DOC-CW01-001"
+   },
+   {
+    "STT": 91,
+    "Bảng": "Dim_HoSo",
+    "Trường": "IDDuAn",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_DuAn",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 92,
+    "Bảng": "Dim_HoSo",
+    "Trường": "IDGoiThau",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_GoiThau",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 93,
+    "Bảng": "Dim_HoSo",
+    "Trường": "IDHopDong",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HopDong (nếu có)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 94,
+    "Bảng": "Dim_HoSo",
+    "Trường": "NhomHoSo",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "1.Chuan bi mời thầu / 2.HSMT / 3.HSDT / 4.HĐ+PL / 5.Thi công / 6.Nghiệm thu-TT / 7.Hoàn công / 8.O&M",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 95,
+    "Bảng": "Dim_HoSo",
+    "Trường": "LoaiHoSo",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Loại chi tiết (Bản vẽ / QĐ / CV / Biên bản / Báo cáo...)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 96,
+    "Bảng": "Dim_HoSo",
+    "Trường": "TieuDe",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Tiêu đề hồ sơ",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 97,
+    "Bảng": "Dim_HoSo",
+    "Trường": "SoHieu",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Số hiệu văn bản",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 98,
+    "Bảng": "Dim_HoSo",
+    "Trường": "PhienBan",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Revision (Rev.0, Rev.1...)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 99,
+    "Bảng": "Dim_HoSo",
+    "Trường": "NgayPhatHanh",
+    "Kiểu": "DATE",
+    "Khóa": "",
+    "Mô tả": "Ngày phát hành/ban hành",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 100,
+    "Bảng": "Dim_HoSo",
+    "Trường": "NgayHieuLuc",
+    "Kiểu": "DATE",
+    "Khóa": "",
+    "Mô tả": "Ngày có hiệu lực",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 101,
+    "Bảng": "Dim_HoSo",
+    "Trường": "TrangThai",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Dự thảo / Đã duyệt / Hiệu lực / Hết hạn / Thay thế",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 102,
+    "Bảng": "Dim_HoSo",
+    "Trường": "DonViPhatHanh",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Đơn vị phát hành",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 103,
+    "Bảng": "Dim_HoSo",
+    "Trường": "IDCongViecLienQuan",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_CongViec",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 104,
+    "Bảng": "Dim_HoSo",
+    "Trường": "IDThanhToanLienQuan",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Fact_ThanhToan (Thanh toán ID)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 105,
+    "Bảng": "Dim_HoSo",
+    "Trường": "IDDieuKhoanLienQuan",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_DieuKhoan",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 106,
+    "Bảng": "Dim_HoSo",
+    "Trường": "DuongDanDrive",
+    "Kiểu": "URL",
+    "Khóa": "",
+    "Mô tả": "URL Google Drive",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 107,
+    "Bảng": "Dim_HoSo",
+    "Trường": "MaFileDrive",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "File ID trên Drive",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 108,
+    "Bảng": "Dim_HoSo",
+    "Trường": "TrangThaiOCR",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Chưa OCR / Đã OCR / Không cần",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 109,
+    "Bảng": "Dim_HoSo",
+    "Trường": "TrangThaiTrichXuatAI",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Chưa xử lý / Đã trích xuất / Kiểm tra thủ công",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 110,
+    "Bảng": "Dim_HoSo",
+    "Trường": "NgayCapNhat",
+    "Kiểu": "DATE",
+    "Khóa": "",
+    "Mô tả": "Ngày cập nhật gần nhất trong hệ thống",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 111,
+    "Bảng": "Dim_BOQ",
+    "Trường": "IDHangMucBOQ",
+    "Kiểu": "TEXT PK",
+    "Khóa": "PK",
+    "Mô tả": "Mã hạng mục BOQ",
+    "Ví dụ": "BOQ-CW01-1.1.01"
+   },
+   {
+    "STT": 112,
+    "Bảng": "Dim_BOQ",
+    "Trường": "IDGoiThau",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_GoiThau",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 113,
+    "Bảng": "Dim_BOQ",
+    "Trường": "IDHopDong",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HopDong (BOQ thuộc HĐ nào)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 114,
+    "Bảng": "Dim_BOQ",
+    "Trường": "MaChuong",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Số hiệu chương/hạng mục cha",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 115,
+    "Bảng": "Dim_BOQ",
+    "Trường": "MaHangMuc",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Mã hạng mục cấp thấp (1.1.01)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 116,
+    "Bảng": "Dim_BOQ",
+    "Trường": "MoTa",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Mô tả công việc",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 117,
+    "Bảng": "Dim_BOQ",
+    "Trường": "DonVi",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Đơn vị tính (m3, m2, tấn, cái...)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 118,
+    "Bảng": "Dim_BOQ",
+    "Trường": "KhoiLuong_HD",
+    "Kiểu": "NUMBER",
+    "Khóa": "",
+    "Mô tả": "Khối lượng theo HĐ",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 119,
+    "Bảng": "Dim_BOQ",
+    "Trường": "DonGia_HD",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Đơn giá theo HĐ (VNĐ)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 120,
+    "Bảng": "Dim_BOQ",
+    "Trường": "ThanhTien_HD",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Thành tiền = KL x ĐG",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 121,
+    "Bảng": "Dim_BOQ",
+    "Trường": "NhomChiPhi",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Xây lắp / Thiết bị / Tư vấn / Khác",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 122,
+    "Bảng": "Dim_BOQ",
+    "Trường": "MucCa",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Cấp phân loại (Chương I, II, III...)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 123,
+    "Bảng": "Dim_BOQ",
+    "Trường": "GhiChu",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Ghi chú",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 124,
+    "Bảng": "Dim_HoatDong",
+    "Trường": "IDHoatDong",
+    "Kiểu": "TEXT PK",
+    "Khóa": "PK",
+    "Mô tả": "Mã hoạt động",
+    "Ví dụ": "ACT-CW01-100"
+   },
+   {
+    "STT": 125,
+    "Bảng": "Dim_HoatDong",
+    "Trường": "IDGoiThau",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_GoiThau",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 126,
+    "Bảng": "Dim_HoatDong",
+    "Trường": "MaWBS",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Mã WBS (1.1, 1.1.1...)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 127,
+    "Bảng": "Dim_HoatDong",
+    "Trường": "TenHoatDong",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Tên hoạt động",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 128,
+    "Bảng": "Dim_HoatDong",
+    "Trường": "IDHoatDongCha",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "Hoạt động cha (self-ref)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 129,
+    "Bảng": "Dim_HoatDong",
+    "Trường": "CapDo",
+    "Kiểu": "INT",
+    "Khóa": "",
+    "Mô tả": "Cấp WBS (1, 2, 3...)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 130,
+    "Bảng": "Dim_HoatDong",
+    "Trường": "LoaiHoatDong",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Milestone / Task / Summary / LOE",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 131,
+    "Bảng": "Dim_HoatDong",
+    "Trường": "IDHangMucBOQLienQuan",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_BOQ (link EVM)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 132,
+    "Bảng": "Dim_HoatDong",
+    "Trường": "NgayBatDauBaseline",
+    "Kiểu": "DATE",
+    "Khóa": "",
+    "Mô tả": "Baseline Start",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 133,
+    "Bảng": "Dim_HoatDong",
+    "Trường": "NgayKetThucBaseline",
+    "Kiểu": "DATE",
+    "Khóa": "",
+    "Mô tả": "Baseline Finish",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 134,
+    "Bảng": "Dim_HoatDong",
+    "Trường": "ThoiLuong_Ngay",
+    "Kiểu": "INT",
+    "Khóa": "",
+    "Mô tả": "Duration (days)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 135,
+    "Bảng": "Dim_HoatDong",
+    "Trường": "TrongSo_Percent",
+    "Kiểu": "PERCENT",
+    "Khóa": "",
+    "Mô tả": "Trọng số trong gói (tổng = 100%)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 136,
+    "Bảng": "Dim_HoatDong",
+    "Trường": "GiaTriKeHoach_PV",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Planned Value (PV) - dùng cho EVM",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 137,
+    "Bảng": "Dim_HoatDong",
+    "Trường": "NguoiPhuTrach",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Responsible",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 138,
+    "Bảng": "Dim_HoatDong",
+    "Trường": "TrangThai",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Chưa BĐ / Đang thi công / Hoàn thành",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 139,
+    "Bảng": "Dim_DieuKhoan",
+    "Trường": "IDDieuKhoan",
+    "Kiểu": "TEXT PK",
+    "Khóa": "PK",
+    "Mô tả": "Mã điều khoản",
+    "Ví dụ": "CLS-CW01-005"
+   },
+   {
+    "STT": 140,
+    "Bảng": "Dim_DieuKhoan",
+    "Trường": "IDHopDong",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HopDong",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 141,
+    "Bảng": "Dim_DieuKhoan",
+    "Trường": "IDGoiThau",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_GoiThau",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 142,
+    "Bảng": "Dim_DieuKhoan",
+    "Trường": "SoDieu",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Số điều khoản (Điều 5, Clause 14.7...)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 143,
+    "Bảng": "Dim_DieuKhoan",
+    "Trường": "TieuDe",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Tiêu đề điều khoản",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 144,
+    "Bảng": "Dim_DieuKhoan",
+    "Trường": "LoaiDieuKhoan",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Thanh toán / Tiến độ / Bảo hành / Phạt / Bảo lãnh / Bảo hiểm / Khác",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 145,
+    "Bảng": "Dim_DieuKhoan",
+    "Trường": "NghiaVuBenA",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Nghĩa vụ Chủ đầu tư",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 146,
+    "Bảng": "Dim_DieuKhoan",
+    "Trường": "NghiaVuBenB",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Nghĩa vụ Nhà thầu",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 147,
+    "Bảng": "Dim_DieuKhoan",
+    "Trường": "HanChotThucHien",
+    "Kiểu": "DATE",
+    "Khóa": "",
+    "Mô tả": "Deadline (nếu có)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 148,
+    "Bảng": "Dim_DieuKhoan",
+    "Trường": "TrangThai",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Đang hiệu lực / Đã hoàn tất / Vi phạm",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 149,
+    "Bảng": "Dim_DieuKhoan",
+    "Trường": "IDHoSoNguon",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HoSo - file nguồn",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 150,
+    "Bảng": "Dim_DieuKhoan",
+    "Trường": "TrangSoTrong_File",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Page/section reference",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 151,
+    "Bảng": "Dim_DieuKhoan",
+    "Trường": "DoTinCay_AI",
+    "Kiểu": "PERCENT",
+    "Khóa": "",
+    "Mô tả": "Confidence của AI khi trích xuất (%)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 152,
+    "Bảng": "Dim_DieuKhoan",
+    "Trường": "PhienDich_AI",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Diễn giải/tóm tắt bởi AI",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 153,
+    "Bảng": "Dim_DieuKhoan",
+    "Trường": "GhiChu",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Ghi chú",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 154,
+    "Bảng": "Dim_CongViec",
+    "Trường": "IDCongViec",
+    "Kiểu": "TEXT PK",
+    "Khóa": "PK",
+    "Mô tả": "Mã công việc",
+    "Ví dụ": "TASK-CW01-005"
+   },
+   {
+    "STT": 155,
+    "Bảng": "Dim_CongViec",
+    "Trường": "TieuDe",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Tiêu đề task",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 156,
+    "Bảng": "Dim_CongViec",
+    "Trường": "MoTa",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Mô tả chi tiết",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 157,
+    "Bảng": "Dim_CongViec",
+    "Trường": "IDGoiThau",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_GoiThau",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 158,
+    "Bảng": "Dim_CongViec",
+    "Trường": "IDHopDong",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HopDong (nếu liên quan)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 159,
+    "Bảng": "Dim_CongViec",
+    "Trường": "IDDieuKhoanLienQuan",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_DieuKhoan",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 160,
+    "Bảng": "Dim_CongViec",
+    "Trường": "IDHoSoLienQuan",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HoSo",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 161,
+    "Bảng": "Dim_CongViec",
+    "Trường": "IDThanhToanLienQuan",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Fact_ThanhToan",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 162,
+    "Bảng": "Dim_CongViec",
+    "Trường": "MucDoUuTien",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Nghiêm trọng / Cao / Trung bình / Thấp",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 163,
+    "Bảng": "Dim_CongViec",
+    "Trường": "TrangThai",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Hôm nay / Sắp tới / Quá hạn / Chờ xử lý / Hoàn thành",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 164,
+    "Bảng": "Dim_CongViec",
+    "Trường": "NguoiPhuTrach",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Assignee",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 165,
+    "Bảng": "Dim_CongViec",
+    "Trường": "NgayBatDau",
+    "Kiểu": "DATE",
+    "Khóa": "",
+    "Mô tả": "Start date",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 166,
+    "Bảng": "Dim_CongViec",
+    "Trường": "HanChot",
+    "Kiểu": "DATE",
+    "Khóa": "",
+    "Mô tả": "Due date",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 167,
+    "Bảng": "Dim_CongViec",
+    "Trường": "NgayTao",
+    "Kiểu": "DATE",
+    "Khóa": "",
+    "Mô tả": "Created date",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 168,
+    "Bảng": "Dim_CongViec",
+    "Trường": "NgayHoanThanh",
+    "Kiểu": "DATE",
+    "Khóa": "",
+    "Mô tả": "Completed date",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 169,
+    "Bảng": "Dim_CongViec",
+    "Trường": "NguonTao",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Thủ công / AI Alert / HĐ / Kế hoạch",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 170,
+    "Bảng": "Dim_CongViec",
+    "Trường": "GhiChu",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Ghi chú",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 171,
+    "Bảng": "Dim_TrangThai",
+    "Trường": "IDTrangThai",
+    "Kiểu": "TEXT PK",
+    "Khóa": "PK",
+    "Mô tả": "Mã trạng thái",
+    "Ví dụ": "ST-GOI-DTC"
+   },
+   {
+    "STT": 172,
+    "Bảng": "Dim_TrangThai",
+    "Trường": "NhomTrangThai",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Gói thầu / HĐ / Thanh toán / Tiến độ / Công việc / Hồ sơ / Cảnh báo",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 173,
+    "Bảng": "Dim_TrangThai",
+    "Trường": "TenTrangThai",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Tên trạng thái",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 174,
+    "Bảng": "Dim_TrangThai",
+    "Trường": "ThuTuSapXep",
+    "Kiểu": "INT",
+    "Khóa": "",
+    "Mô tả": "Thứ tự hiển thị",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 175,
+    "Bảng": "Dim_TrangThai",
+    "Trường": "MauHex",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Mã màu (dùng cho conditional formatting)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 176,
+    "Bảng": "Dim_TrangThai",
+    "Trường": "MoTa",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Mô tả",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 177,
+    "Bảng": "Dim_RuiRo",
+    "Trường": "IDRuiRo",
+    "Kiểu": "TEXT PK",
+    "Khóa": "PK",
+    "Mô tả": "Mã rủi ro",
+    "Ví dụ": "R-TIME-001"
+   },
+   {
+    "STT": 178,
+    "Bảng": "Dim_RuiRo",
+    "Trường": "NhomRuiRo",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Thời gian / Chi phí / Chất lượng / Hồ sơ / HĐ / An toàn / Môi trường / ODA-WB",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 179,
+    "Bảng": "Dim_RuiRo",
+    "Trường": "TenRuiRo",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Tên rủi ro",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 180,
+    "Bảng": "Dim_RuiRo",
+    "Trường": "MoTa",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Mô tả chi tiết",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 181,
+    "Bảng": "Dim_RuiRo",
+    "Trường": "TacDongTiemAn",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Tác động tiềm ẩn",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 182,
+    "Bảng": "Dim_RuiRo",
+    "Trường": "MucDoTacDong_MacDinh",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Thấp / Trung bình / Cao / Nghiêm trọng",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 183,
+    "Bảng": "Dim_RuiRo",
+    "Trường": "XacSuat_MacDinh",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Thấp / Trung bình / Cao",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 184,
+    "Bảng": "Dim_RuiRo",
+    "Trường": "BienPhapPhongNgua",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Preventive action",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 185,
+    "Bảng": "Dim_RuiRo",
+    "Trường": "BienPhapUngPho",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Response action",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 186,
+    "Bảng": "Dim_RuiRo",
+    "Trường": "NguoiPhuTrach_MacDinh",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Owner mặc định",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 187,
+    "Bảng": "Fact_TienDo",
+    "Trường": "IDBanGhi",
+    "Kiểu": "TEXT PK",
+    "Khóa": "PK",
+    "Mô tả": "Mã bản ghi",
+    "Ví dụ": "TD-CW01-202506"
+   },
+   {
+    "STT": 188,
+    "Bảng": "Fact_TienDo",
+    "Trường": "IDGoiThau",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_GoiThau",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 189,
+    "Bảng": "Fact_TienDo",
+    "Trường": "IDHoatDong",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HoatDong (có thể để trống nếu ghi cấp gói)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 190,
+    "Bảng": "Fact_TienDo",
+    "Trường": "IDHangMucBOQ",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_BOQ (nếu ghi theo BOQ)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 191,
+    "Bảng": "Fact_TienDo",
+    "Trường": "IDNgayBaoCao",
+    "Kiểu": "DATE FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_ThoiGian - kỳ báo cáo",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 192,
+    "Bảng": "Fact_TienDo",
+    "Trường": "KyBaoCao",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Kỳ báo cáo (YYYY-MM)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 193,
+    "Bảng": "Fact_TienDo",
+    "Trường": "TienDo_KeHoach_Percent",
+    "Kiểu": "PERCENT",
+    "Khóa": "",
+    "Mô tả": "% Kế hoạch lũy kế đến kỳ",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 194,
+    "Bảng": "Fact_TienDo",
+    "Trường": "TienDo_ThucTe_Percent",
+    "Kiểu": "PERCENT",
+    "Khóa": "",
+    "Mô tả": "% Thực tế lũy kế đến kỳ",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 195,
+    "Bảng": "Fact_TienDo",
+    "Trường": "SaiLech_Percent",
+    "Kiểu": "PERCENT",
+    "Khóa": "",
+    "Mô tả": "Actual - Planned",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 196,
+    "Bảng": "Fact_TienDo",
+    "Trường": "KhoiLuong_ThucHien_Kỳ",
+    "Kiểu": "NUMBER",
+    "Khóa": "",
+    "Mô tả": "Khối lượng thực hiện trong kỳ",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 197,
+    "Bảng": "Fact_TienDo",
+    "Trường": "KhoiLuong_LuyKe",
+    "Kiểu": "NUMBER",
+    "Khóa": "",
+    "Mô tả": "Khối lượng thực hiện lũy kế",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 198,
+    "Bảng": "Fact_TienDo",
+    "Trường": "GiaTri_ThucHien_KyVND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Giá trị thực hiện trong kỳ",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 199,
+    "Bảng": "Fact_TienDo",
+    "Trường": "GiaTri_LuyKe_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Giá trị thực hiện lũy kế",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 200,
+    "Bảng": "Fact_TienDo",
+    "Trường": "NgayCapNhat",
+    "Kiểu": "DATE",
+    "Khóa": "",
+    "Mô tả": "Ngày cập nhật bản ghi",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 201,
+    "Bảng": "Fact_TienDo",
+    "Trường": "NguoiCapNhat",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Người cập nhật",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 202,
+    "Bảng": "Fact_TienDo",
+    "Trường": "IDHoSoNguon",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HoSo - BBNT/báo cáo tiến độ nguồn",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 203,
+    "Bảng": "Fact_TienDo",
+    "Trường": "GhiChu",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Ghi chú",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 204,
+    "Bảng": "Fact_ThanhToan",
+    "Trường": "IDThanhToan",
+    "Kiểu": "TEXT PK",
+    "Khóa": "PK",
+    "Mô tả": "Mã thanh toán",
+    "Ví dụ": "PMT-CW01-006"
+   },
+   {
+    "STT": 205,
+    "Bảng": "Fact_ThanhToan",
+    "Trường": "SoDot",
+    "Kiểu": "INT",
+    "Khóa": "",
+    "Mô tả": "Số đợt (1, 2, 3...)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 206,
+    "Bảng": "Fact_ThanhToan",
+    "Trường": "LoaiThanhToan",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Tạm ứng / Nghiệm thu KL / Cuối / Bảo hành",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 207,
+    "Bảng": "Fact_ThanhToan",
+    "Trường": "IDGoiThau",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_GoiThau",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 208,
+    "Bảng": "Fact_ThanhToan",
+    "Trường": "IDHopDong",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HopDong",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 209,
+    "Bảng": "Fact_ThanhToan",
+    "Trường": "IDNhaThau",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_NhaThau",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 210,
+    "Bảng": "Fact_ThanhToan",
+    "Trường": "IDNgayTrinh",
+    "Kiểu": "DATE FK",
+    "Khóa": "FK",
+    "Mô tả": "Ngày trình HS thanh toán - FK Dim_ThoiGian",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 211,
+    "Bảng": "Fact_ThanhToan",
+    "Trường": "IDNgayDuyet",
+    "Kiểu": "DATE FK",
+    "Khóa": "FK",
+    "Mô tả": "Ngày duyệt",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 212,
+    "Bảng": "Fact_ThanhToan",
+    "Trường": "IDNgayThanhToan",
+    "Kiểu": "DATE FK",
+    "Khóa": "FK",
+    "Mô tả": "Ngày thanh toán thực tế",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 213,
+    "Bảng": "Fact_ThanhToan",
+    "Trường": "GiaTri_DeNghi_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Giá trị nhà thầu đề nghị",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 214,
+    "Bảng": "Fact_ThanhToan",
+    "Trường": "GiaTri_ChungNhan_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Giá trị TVGS chứng nhận",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 215,
+    "Bảng": "Fact_ThanhToan",
+    "Trường": "GiaTri_DuocDuyet_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Giá trị được duyệt (Certified)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 216,
+    "Bảng": "Fact_ThanhToan",
+    "Trường": "TamUng_KhauTru_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Khấu trừ tạm ứng đợt này",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 217,
+    "Bảng": "Fact_ThanhToan",
+    "Trường": "GiuLai_BaoHanh_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Giữ lại bảo hành",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 218,
+    "Bảng": "Fact_ThanhToan",
+    "Trường": "Thue_KhauTru_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Thuế khấu trừ",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 219,
+    "Bảng": "Fact_ThanhToan",
+    "Trường": "PhatLD_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Phạt LD (nếu có)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 220,
+    "Bảng": "Fact_ThanhToan",
+    "Trường": "GiaTri_ThanhToan_ThucVND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Giá trị thanh toán thực tế",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 221,
+    "Bảng": "Fact_ThanhToan",
+    "Trường": "TrangThai",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Chờ duyệt / Đã duyệt / Đã thanh toán / Từ chối",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 222,
+    "Bảng": "Fact_ThanhToan",
+    "Trường": "IDHoSoNghiemThu",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HoSo - BBNT gốc",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 223,
+    "Bảng": "Fact_ThanhToan",
+    "Trường": "IDHoSoThanhToan",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HoSo - CV thanh toán",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 224,
+    "Bảng": "Fact_ThanhToan",
+    "Trường": "GhiChu",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Ghi chú",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 225,
+    "Bảng": "Fact_GiaiNgan",
+    "Trường": "IDBanGhi",
+    "Kiểu": "TEXT PK",
+    "Khóa": "PK",
+    "Mô tả": "Mã bản ghi",
+    "Ví dụ": "GN-CW01-202506"
+   },
+   {
+    "STT": 226,
+    "Bảng": "Fact_GiaiNgan",
+    "Trường": "IDGoiThau",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_GoiThau",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 227,
+    "Bảng": "Fact_GiaiNgan",
+    "Trường": "IDHopDong",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HopDong",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 228,
+    "Bảng": "Fact_GiaiNgan",
+    "Trường": "IDNgay",
+    "Kiểu": "DATE FK",
+    "Khóa": "FK",
+    "Mô tả": "Ngày cuối kỳ - FK Dim_ThoiGian",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 229,
+    "Bảng": "Fact_GiaiNgan",
+    "Trường": "KyBaoCao",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "YYYY-MM",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 230,
+    "Bảng": "Fact_GiaiNgan",
+    "Trường": "NguonVon",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "ODA / Đối ứng / Khác",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 231,
+    "Bảng": "Fact_GiaiNgan",
+    "Trường": "KeHoachThang_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Kế hoạch giải ngân trong tháng",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 232,
+    "Bảng": "Fact_GiaiNgan",
+    "Trường": "KeHoachLuyKe_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Kế hoạch lũy kế đến kỳ",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 233,
+    "Bảng": "Fact_GiaiNgan",
+    "Trường": "ThucTeThang_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Thực tế giải ngân trong tháng",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 234,
+    "Bảng": "Fact_GiaiNgan",
+    "Trường": "ThucTeLuyKe_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Thực tế lũy kế",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 235,
+    "Bảng": "Fact_GiaiNgan",
+    "Trường": "SaiLech_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "ThucTe - KeHoach (lũy kế)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 236,
+    "Bảng": "Fact_GiaiNgan",
+    "Trường": "TyLeHoanThanh_KH",
+    "Kiểu": "PERCENT",
+    "Khóa": "",
+    "Mô tả": "% Thực tế / Kế hoạch",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 237,
+    "Bảng": "Fact_GiaiNgan",
+    "Trường": "GhiChu",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Ghi chú",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 238,
+    "Bảng": "Fact_NganSach",
+    "Trường": "IDBanGhi",
+    "Kiểu": "TEXT PK",
+    "Khóa": "PK",
+    "Mô tả": "Mã bản ghi",
+    "Ví dụ": "NS-CW01-2025-ODA"
+   },
+   {
+    "STT": 239,
+    "Bảng": "Fact_NganSach",
+    "Trường": "IDGoiThau",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_GoiThau",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 240,
+    "Bảng": "Fact_NganSach",
+    "Trường": "IDHopDong",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HopDong",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 241,
+    "Bảng": "Fact_NganSach",
+    "Trường": "NamKeHoach",
+    "Kiểu": "INT",
+    "Khóa": "",
+    "Mô tả": "Năm kế hoạch",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 242,
+    "Bảng": "Fact_NganSach",
+    "Trường": "NguonVon",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "ODA / Đối ứng / Khác",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 243,
+    "Bảng": "Fact_NganSach",
+    "Trường": "LoaiNganSach",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Duyệt ban đầu / Điều chỉnh / Bổ sung",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 244,
+    "Bảng": "Fact_NganSach",
+    "Trường": "GiaTri_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Giá trị ngân sách",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 245,
+    "Bảng": "Fact_NganSach",
+    "Trường": "NgayPheDuyet",
+    "Kiểu": "DATE",
+    "Khóa": "",
+    "Mô tả": "Ngày phê duyệt",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 246,
+    "Bảng": "Fact_NganSach",
+    "Trường": "SoQuyetDinh",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Số QĐ phê duyệt",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 247,
+    "Bảng": "Fact_NganSach",
+    "Trường": "IDHoSoNguon",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HoSo - QĐ nguồn",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 248,
+    "Bảng": "Fact_NganSach",
+    "Trường": "GhiChu",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 249,
+    "Bảng": "Fact_EVM",
+    "Trường": "IDBanGhi",
+    "Kiểu": "TEXT PK",
+    "Khóa": "PK",
+    "Mô tả": "Mã bản ghi",
+    "Ví dụ": "EVM-CW01-202506"
+   },
+   {
+    "STT": 250,
+    "Bảng": "Fact_EVM",
+    "Trường": "IDGoiThau",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_GoiThau",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 251,
+    "Bảng": "Fact_EVM",
+    "Trường": "IDNgay",
+    "Kiểu": "DATE FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_ThoiGian - kỳ đánh giá",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 252,
+    "Bảng": "Fact_EVM",
+    "Trường": "KyBaoCao",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "YYYY-MM",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 253,
+    "Bảng": "Fact_EVM",
+    "Trường": "BAC_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Budget At Completion",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 254,
+    "Bảng": "Fact_EVM",
+    "Trường": "PV_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Planned Value",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 255,
+    "Bảng": "Fact_EVM",
+    "Trường": "EV_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Earned Value",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 256,
+    "Bảng": "Fact_EVM",
+    "Trường": "AC_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Actual Cost",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 257,
+    "Bảng": "Fact_EVM",
+    "Trường": "SV_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "SV = EV - PV",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 258,
+    "Bảng": "Fact_EVM",
+    "Trường": "CV_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "CV = EV - AC",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 259,
+    "Bảng": "Fact_EVM",
+    "Trường": "SPI",
+    "Kiểu": "NUMBER",
+    "Khóa": "",
+    "Mô tả": "SPI = EV / PV",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 260,
+    "Bảng": "Fact_EVM",
+    "Trường": "CPI",
+    "Kiểu": "NUMBER",
+    "Khóa": "",
+    "Mô tả": "CPI = EV / AC",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 261,
+    "Bảng": "Fact_EVM",
+    "Trường": "EAC_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "EAC = BAC / CPI (giả định CPI ổn định)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 262,
+    "Bảng": "Fact_EVM",
+    "Trường": "ETC_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "ETC = EAC - AC",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 263,
+    "Bảng": "Fact_EVM",
+    "Trường": "VAC_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "VAC = BAC - EAC",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 264,
+    "Bảng": "Fact_EVM",
+    "Trường": "TrangThai_DuLieu",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Đủ dữ liệu / Insufficient Data",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 265,
+    "Bảng": "Fact_EVM",
+    "Trường": "GhiChu",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Diễn giải",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 266,
+    "Bảng": "Fact_CongViec",
+    "Trường": "IDSuKien",
+    "Kiểu": "TEXT PK",
+    "Khóa": "PK",
+    "Mô tả": "Mã sự kiện",
+    "Ví dụ": "TE-2025070500001"
+   },
+   {
+    "STT": 267,
+    "Bảng": "Fact_CongViec",
+    "Trường": "IDCongViec",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_CongViec",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 268,
+    "Bảng": "Fact_CongViec",
+    "Trường": "IDGoiThau",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_GoiThau",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 269,
+    "Bảng": "Fact_CongViec",
+    "Trường": "LoaiSuKien",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Tạo / Đổi TT / Đổi Owner / Gia hạn / Đóng",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 270,
+    "Bảng": "Fact_CongViec",
+    "Trường": "IDNgaySuKien",
+    "Kiểu": "DATE FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_ThoiGian",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 271,
+    "Bảng": "Fact_CongViec",
+    "Trường": "ThoiDiem",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Thời điểm chi tiết (HH:MM)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 272,
+    "Bảng": "Fact_CongViec",
+    "Trường": "TrangThai_Truoc",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Trạng thái trước",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 273,
+    "Bảng": "Fact_CongViec",
+    "Trường": "TrangThai_Sau",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Trạng thái sau",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 274,
+    "Bảng": "Fact_CongViec",
+    "Trường": "Owner_Truoc",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 275,
+    "Bảng": "Fact_CongViec",
+    "Trường": "Owner_Sau",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 276,
+    "Bảng": "Fact_CongViec",
+    "Trường": "NguoiThucHien",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Ai thực hiện thay đổi",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 277,
+    "Bảng": "Fact_CongViec",
+    "Trường": "GhiChu",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 278,
+    "Bảng": "Fact_HopDong_Event",
+    "Trường": "IDSuKien",
+    "Kiểu": "TEXT PK",
+    "Khóa": "PK",
+    "Mô tả": "Mã sự kiện",
+    "Ví dụ": "HE-CW01-001"
+   },
+   {
+    "STT": 279,
+    "Bảng": "Fact_HopDong_Event",
+    "Trường": "IDHopDong",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HopDong",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 280,
+    "Bảng": "Fact_HopDong_Event",
+    "Trường": "IDGoiThau",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_GoiThau",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 281,
+    "Bảng": "Fact_HopDong_Event",
+    "Trường": "LoaiSuKien",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Ký / Hiệu lực / Gia hạn / Phụ lục / Mốc / Kết thúc",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 282,
+    "Bảng": "Fact_HopDong_Event",
+    "Trường": "MoTa",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Mô tả sự kiện",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 283,
+    "Bảng": "Fact_HopDong_Event",
+    "Trường": "IDNgay",
+    "Kiểu": "DATE FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_ThoiGian",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 284,
+    "Bảng": "Fact_HopDong_Event",
+    "Trường": "GiaTriTacDong_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Giá trị tác động (nếu có)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 285,
+    "Bảng": "Fact_HopDong_Event",
+    "Trường": "IDDieuKhoanLienQuan",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_DieuKhoan",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 286,
+    "Bảng": "Fact_HopDong_Event",
+    "Trường": "IDHoSoNguon",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HoSo",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 287,
+    "Bảng": "Fact_HopDong_Event",
+    "Trường": "TrangThai",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Đã hoàn tất / Đang xử lý / Chờ",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 288,
+    "Bảng": "Fact_HopDong_Event",
+    "Trường": "GhiChu",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 289,
+    "Bảng": "Fact_PhatSinh",
+    "Trường": "IDPhatSinh",
+    "Kiểu": "TEXT PK",
+    "Khóa": "PK",
+    "Mô tả": "Mã phát sinh",
+    "Ví dụ": "PS-CW01-001"
+   },
+   {
+    "STT": 290,
+    "Bảng": "Fact_PhatSinh",
+    "Trường": "IDGoiThau",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_GoiThau",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 291,
+    "Bảng": "Fact_PhatSinh",
+    "Trường": "IDHopDong",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HopDong (gốc)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 292,
+    "Bảng": "Fact_PhatSinh",
+    "Trường": "IDHopDongPhuLuc",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HopDong (phụ lục khi đã ký)",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 293,
+    "Bảng": "Fact_PhatSinh",
+    "Trường": "LoaiPhatSinh",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Tăng KL / Giảm KL / Đơn giá / Phạm vi / Kỹ thuật",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 294,
+    "Bảng": "Fact_PhatSinh",
+    "Trường": "NguyenNhan",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Nguyên nhân",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 295,
+    "Bảng": "Fact_PhatSinh",
+    "Trường": "MoTa",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Mô tả chi tiết",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 296,
+    "Bảng": "Fact_PhatSinh",
+    "Trường": "IDNgayPhatHien",
+    "Kiểu": "DATE FK",
+    "Khóa": "FK",
+    "Mô tả": "Ngày phát hiện",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 297,
+    "Bảng": "Fact_PhatSinh",
+    "Trường": "IDNgayDeNghi",
+    "Kiểu": "DATE FK",
+    "Khóa": "FK",
+    "Mô tả": "Ngày nhà thầu đề nghị",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 298,
+    "Bảng": "Fact_PhatSinh",
+    "Trường": "IDNgayDuyet",
+    "Kiểu": "DATE FK",
+    "Khóa": "FK",
+    "Mô tả": "Ngày phê duyệt",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 299,
+    "Bảng": "Fact_PhatSinh",
+    "Trường": "GiaTri_DeNghi_VND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Giá trị đề nghị",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 300,
+    "Bảng": "Fact_PhatSinh",
+    "Trường": "GiaTri_DuyetVND",
+    "Kiểu": "MONEY_VND",
+    "Khóa": "",
+    "Mô tả": "Giá trị được duyệt",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 301,
+    "Bảng": "Fact_PhatSinh",
+    "Trường": "TrangThai",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Đề xuất / Đang xem xét / Đã duyệt / Từ chối / Đã ký PL",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 302,
+    "Bảng": "Fact_PhatSinh",
+    "Trường": "IDHoSoNguon",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HoSo",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 303,
+    "Bảng": "Fact_PhatSinh",
+    "Trường": "GhiChu",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 304,
+    "Bảng": "Fact_RuiRo",
+    "Trường": "IDSuKien",
+    "Kiểu": "TEXT PK",
+    "Khóa": "PK",
+    "Mô tả": "Mã sự kiện",
+    "Ví dụ": "RE-2025070500001"
+   },
+   {
+    "STT": 305,
+    "Bảng": "Fact_RuiRo",
+    "Trường": "IDRuiRo",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_RuiRo",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 306,
+    "Bảng": "Fact_RuiRo",
+    "Trường": "IDGoiThau",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_GoiThau",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 307,
+    "Bảng": "Fact_RuiRo",
+    "Trường": "IDHopDong",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HopDong",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 308,
+    "Bảng": "Fact_RuiRo",
+    "Trường": "IDNgayPhatHien",
+    "Kiểu": "DATE FK",
+    "Khóa": "FK",
+    "Mô tả": "Ngày phát hiện",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 309,
+    "Bảng": "Fact_RuiRo",
+    "Trường": "MoTa_SuKien",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Mô tả sự kiện",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 310,
+    "Bảng": "Fact_RuiRo",
+    "Trường": "MucDoNghiemTrong",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "P0 / P1 / P2 / P3",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 311,
+    "Bảng": "Fact_RuiRo",
+    "Trường": "TacDong_Diem",
+    "Kiểu": "NUMBER",
+    "Khóa": "",
+    "Mô tả": "Impact score 1-5",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 312,
+    "Bảng": "Fact_RuiRo",
+    "Trường": "XacSuat_Diem",
+    "Kiểu": "NUMBER",
+    "Khóa": "",
+    "Mô tả": "Probability score 1-5",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 313,
+    "Bảng": "Fact_RuiRo",
+    "Trường": "Diem_RuiRo",
+    "Kiểu": "NUMBER",
+    "Khóa": "",
+    "Mô tả": "Impact x Probability",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 314,
+    "Bảng": "Fact_RuiRo",
+    "Trường": "NguonCanhBao",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "AI / Thủ công / TVGS / Nhà thầu",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 315,
+    "Bảng": "Fact_RuiRo",
+    "Trường": "TrangThai",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Mới / Đang xử lý / Đã xử lý / Đóng",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 316,
+    "Bảng": "Fact_RuiRo",
+    "Trường": "NguoiPhuTrach",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 317,
+    "Bảng": "Fact_RuiRo",
+    "Trường": "HanhDong_KhuyenNghi",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "AI khuyến nghị",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 318,
+    "Bảng": "Fact_RuiRo",
+    "Trường": "IDCongViec_TaoRa",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_CongViec - task được tạo từ cảnh báo này",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 319,
+    "Bảng": "Fact_RuiRo",
+    "Trường": "IDHoSoNguon",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HoSo",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 320,
+    "Bảng": "Fact_RuiRo",
+    "Trường": "PhanLoai_AI",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Đã xác nhận / Xung đột tiềm ẩn / Cần con người kiểm tra / Thiếu bằng chứng",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 321,
+    "Bảng": "Fact_RuiRo",
+    "Trường": "GhiChu",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 322,
+    "Bảng": "Fact_TrangThai_HoSo",
+    "Trường": "IDSuKien",
+    "Kiểu": "TEXT PK",
+    "Khóa": "PK",
+    "Mô tả": "Mã sự kiện",
+    "Ví dụ": "DE-2025070500001"
+   },
+   {
+    "STT": 323,
+    "Bảng": "Fact_TrangThai_HoSo",
+    "Trường": "IDHoSo",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_HoSo",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 324,
+    "Bảng": "Fact_TrangThai_HoSo",
+    "Trường": "IDGoiThau",
+    "Kiểu": "TEXT FK",
+    "Khóa": "FK",
+    "Mô tả": "FK Dim_GoiThau",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 325,
+    "Bảng": "Fact_TrangThai_HoSo",
+    "Trường": "IDNgay",
+    "Kiểu": "DATE FK",
+    "Khóa": "FK",
+    "Mô tả": "Ngày sự kiện",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 326,
+    "Bảng": "Fact_TrangThai_HoSo",
+    "Trường": "LoaiSuKien",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Thêm / Cập nhật / Duyệt / Thay thế / Hết hiệu lực / Xóa",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 327,
+    "Bảng": "Fact_TrangThai_HoSo",
+    "Trường": "TrangThai_Truoc",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 328,
+    "Bảng": "Fact_TrangThai_HoSo",
+    "Trường": "TrangThai_Sau",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 329,
+    "Bảng": "Fact_TrangThai_HoSo",
+    "Trường": "PhienBan_Truoc",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 330,
+    "Bảng": "Fact_TrangThai_HoSo",
+    "Trường": "PhienBan_Sau",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 331,
+    "Bảng": "Fact_TrangThai_HoSo",
+    "Trường": "NguoiThucHien",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 332,
+    "Bảng": "Fact_TrangThai_HoSo",
+    "Trường": "NguonThucHien",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "Google Drive Watch / Thủ công / Import",
+    "Ví dụ": ""
+   },
+   {
+    "STT": 333,
+    "Bảng": "Fact_TrangThai_HoSo",
+    "Trường": "GhiChu",
+    "Kiểu": "TEXT",
+    "Khóa": "",
+    "Mô tả": "",
+    "Ví dụ": ""
+   }
+  ],
+  "Dim_DuAn": [
+   {
+    "IDDuAn": "PRJ-VUDPHCM",
+    "MaDuAn": "VUDP-HCM",
+    "TenDuAn": "Vietnam Urban Development Project - Ho Chi Minh City",
+    "ChuDauTu": "UBND TP.HCM",
+    "BanQLDA": "BQLDA VUDP-HCM",
+    "NguonVon": "ODA + Đối ứng",
+    "NhaTaiTro": "World Bank (IBRD)",
+    "TongMucDauTu_VND": 4500000000000,
+    "TongMucDauTu_USD": 180000000,
+    "NgayPheDuyet": "2022-06-15",
+    "NgayKhoiCong": "2023-03-01",
+    "NgayHoanThanhKeHoach": "2027-12-31",
+    "GiaiDoan": "Thực hiện",
+    "TrangThai": "Đang triển khai",
+    "GhiChu": "Dự án phát triển đô thị, gồm 5 gói thầu xây lắp chính CW-01 đến CW-05"
+   }
+  ],
+  "Dim_GoiThau": [
+   {
+    "IDGoiThau": "PKG-CW01",
+    "MaGoiThau": "CW-01",
+    "TenGoiThau": "Nhà Khoa Y & Hạ tầng kỹ thuật",
+    "IDDuAn": "PRJ-VUDPHCM",
+    "LoaiHopDong": "Đơn giá",
+    "HinhThucLuaChonNhaThau": "Đấu thầu rộng rãi quốc tế",
+    "IDNhaThau": "NT-001",
+    "IDTuVanGiamSat": "TV-CS-001",
+    "IDTuVanThietKe": "TV-DS-001",
+    "GiaGoiThau_VND": 850000000000,
+    "GiaTrungThau_VND": 820000000000,
+    "GiaTriHopDong_VND": 835000000000,
+    "NgayKhoiCongKeHoach": "2023-06-01",
+    "NgayHoanThanhKeHoach": "2026-05-31",
+    "ThoiHanBaoHanh_Thang": 24,
+    "GiaiDoanVongDoi": "Thi công",
+    "TrangThai": "Đang thi công",
+    "NguoiPhuTrach": "PMU - Nhóm CW01",
+    "URLThuMucDrive": "https://drive.google.com/drive/folders/example-cw01",
+    "GhiChu": ""
+   },
+   {
+    "IDGoiThau": "PKG-CW02",
+    "MaGoiThau": "CW-02",
+    "TenGoiThau": "Trung tâm Nghiên cứu Tiên tiến",
+    "IDDuAn": "PRJ-VUDPHCM",
+    "LoaiHopDong": "Đơn giá",
+    "HinhThucLuaChonNhaThau": "Đấu thầu rộng rãi quốc tế",
+    "IDNhaThau": "NT-002",
+    "IDTuVanGiamSat": "TV-CS-001",
+    "IDTuVanThietKe": "TV-DS-001",
+    "GiaGoiThau_VND": 620000000000,
+    "GiaTrungThau_VND": 605000000000,
+    "GiaTriHopDong_VND": 605000000000,
+    "NgayKhoiCongKeHoach": "2023-09-01",
+    "NgayHoanThanhKeHoach": "2026-08-31",
+    "ThoiHanBaoHanh_Thang": 24,
+    "GiaiDoanVongDoi": "Thi công",
+    "TrangThai": "Đang thi công",
+    "NguoiPhuTrach": "PMU - Nhóm CW02",
+    "URLThuMucDrive": "https://drive.google.com/drive/folders/example-cw02",
+    "GhiChu": ""
+   },
+   {
+    "IDGoiThau": "PKG-CW03",
+    "MaGoiThau": "CW-03",
+    "TenGoiThau": "Hoàn thiện & đường ven hồ",
+    "IDDuAn": "PRJ-VUDPHCM",
+    "LoaiHopDong": "Đơn giá",
+    "HinhThucLuaChonNhaThau": "Đấu thầu rộng rãi trong nước",
+    "IDNhaThau": "NT-003",
+    "IDTuVanGiamSat": "TV-CS-002",
+    "IDTuVanThietKe": "TV-DS-002",
+    "GiaGoiThau_VND": 380000000000,
+    "GiaTrungThau_VND": 365000000000,
+    "GiaTriHopDong_VND": 365000000000,
+    "NgayKhoiCongKeHoach": "2024-03-01",
+    "NgayHoanThanhKeHoach": "2026-02-28",
+    "ThoiHanBaoHanh_Thang": 24,
+    "GiaiDoanVongDoi": "Thi công",
+    "TrangThai": "Đang thi công",
+    "NguoiPhuTrach": "PMU - Nhóm CW03",
+    "URLThuMucDrive": "https://drive.google.com/drive/folders/example-cw03",
+    "GhiChu": ""
+   },
+   {
+    "IDGoiThau": "PKG-CW04",
+    "MaGoiThau": "CW-04",
+    "TenGoiThau": "Data Center",
+    "IDDuAn": "PRJ-VUDPHCM",
+    "LoaiHopDong": "Trọn gói",
+    "HinhThucLuaChonNhaThau": "Đấu thầu rộng rãi quốc tế",
+    "IDNhaThau": "NT-004",
+    "IDTuVanGiamSat": "TV-CS-001",
+    "IDTuVanThietKe": "TV-DS-003",
+    "GiaGoiThau_VND": 720000000000,
+    "GiaTrungThau_VND": 695000000000,
+    "GiaTriHopDong_VND": 695000000000,
+    "NgayKhoiCongKeHoach": "2024-06-01",
+    "NgayHoanThanhKeHoach": "2026-11-30",
+    "ThoiHanBaoHanh_Thang": 24,
+    "GiaiDoanVongDoi": "Thi công",
+    "TrangThai": "Đang thi công",
+    "NguoiPhuTrach": "PMU - Nhóm CW04",
+    "URLThuMucDrive": "https://drive.google.com/drive/folders/example-cw04",
+    "GhiChu": ""
+   },
+   {
+    "IDGoiThau": "PKG-CW05",
+    "MaGoiThau": "CW-05",
+    "TenGoiThau": "Trạm xử lý nước thải",
+    "IDDuAn": "PRJ-VUDPHCM",
+    "LoaiHopDong": "Trọn gói",
+    "HinhThucLuaChonNhaThau": "Đấu thầu rộng rãi quốc tế",
+    "IDNhaThau": "NT-005",
+    "IDTuVanGiamSat": "TV-CS-002",
+    "IDTuVanThietKe": "TV-DS-003",
+    "GiaGoiThau_VND": 480000000000,
+    "GiaTrungThau_VND": 462000000000,
+    "GiaTriHopDong_VND": 470000000000,
+    "NgayKhoiCongKeHoach": "2024-09-01",
+    "NgayHoanThanhKeHoach": "2026-12-31",
+    "ThoiHanBaoHanh_Thang": 24,
+    "GiaiDoanVongDoi": "Thi công",
+    "TrangThai": "Đang thi công",
+    "NguoiPhuTrach": "PMU - Nhóm CW05",
+    "URLThuMucDrive": "https://drive.google.com/drive/folders/example-cw05",
+    "GhiChu": "Có công cụ và biểu mẫu riêng"
+   }
+  ],
+  "Dim_HopDong": [
+   {
+    "IDHopDong": "HD-CW01-01",
+    "SoHopDong": "01/2023/HĐ-VUDP",
+    "IDGoiThau": "PKG-CW01",
+    "LoaiVanBan": "HĐ gốc",
+    "IDHopDongGoc": "",
+    "TenHopDong": "HĐ thi công CW-01",
+    "NgayKy": "2023-05-15",
+    "NgayHieuLuc": "2023-06-01",
+    "NgayKetThuc": "2026-05-31",
+    "GiaTri_VND": 820000000000,
+    "TamUng_Percent": 0.15,
+    "GiuLaiBaoHanh_Percent": 0.05,
+    "DieuKienThanhToan": "Theo khối lượng nghiệm thu, thanh toán 90%, giữ lại 10% đến khi bàn giao",
+    "ChuTheKyA": "BQLDA VUDP-HCM",
+    "ChuTheKyB": "Nhà thầu A",
+    "IDHoSoNguon": "DOC-HD-CW01-001",
+    "URLDrive": "https://drive.google.com/file/example",
+    "TrangThai": "Hiệu lực",
+    "GhiChu": ""
+   },
+   {
+    "IDHopDong": "HD-CW01-PL01",
+    "SoHopDong": "01/2024/PL-VUDP",
+    "IDGoiThau": "PKG-CW01",
+    "LoaiVanBan": "Phụ lục",
+    "IDHopDongGoc": "HD-CW01-01",
+    "TenHopDong": "PL01 - Điều chỉnh khối lượng phát sinh HTKT",
+    "NgayKy": "2024-08-10",
+    "NgayHieuLuc": "2024-08-10",
+    "NgayKetThuc": "2026-05-31",
+    "GiaTri_VND": 15000000000,
+    "TamUng_Percent": 0,
+    "GiuLaiBaoHanh_Percent": 0.05,
+    "DieuKienThanhToan": "Kế thừa HĐ gốc",
+    "ChuTheKyA": "BQLDA VUDP-HCM",
+    "ChuTheKyB": "Nhà thầu A",
+    "IDHoSoNguon": "DOC-HD-CW01-002",
+    "URLDrive": "https://drive.google.com/file/example",
+    "TrangThai": "Hiệu lực",
+    "GhiChu": "Phụ lục phát sinh khối lượng HTKT"
+   },
+   {
+    "IDHopDong": "HD-CW02-01",
+    "SoHopDong": "02/2023/HĐ-VUDP",
+    "IDGoiThau": "PKG-CW02",
+    "LoaiVanBan": "HĐ gốc",
+    "IDHopDongGoc": "",
+    "TenHopDong": "HĐ thi công CW-02",
+    "NgayKy": "2023-08-20",
+    "NgayHieuLuc": "2023-09-01",
+    "NgayKetThuc": "2026-08-31",
+    "GiaTri_VND": 605000000000,
+    "TamUng_Percent": 0.15,
+    "GiuLaiBaoHanh_Percent": 0.05,
+    "DieuKienThanhToan": "Theo khối lượng nghiệm thu",
+    "ChuTheKyA": "BQLDA VUDP-HCM",
+    "ChuTheKyB": "Nhà thầu B",
+    "IDHoSoNguon": "DOC-HD-CW02-001",
+    "URLDrive": "https://drive.google.com/file/example",
+    "TrangThai": "Hiệu lực",
+    "GhiChu": ""
+   },
+   {
+    "IDHopDong": "HD-CW03-01",
+    "SoHopDong": "03/2024/HĐ-VUDP",
+    "IDGoiThau": "PKG-CW03",
+    "LoaiVanBan": "HĐ gốc",
+    "IDHopDongGoc": "",
+    "TenHopDong": "HĐ thi công CW-03",
+    "NgayKy": "2024-02-15",
+    "NgayHieuLuc": "2024-03-01",
+    "NgayKetThuc": "2026-02-28",
+    "GiaTri_VND": 365000000000,
+    "TamUng_Percent": 0.1,
+    "GiuLaiBaoHanh_Percent": 0.05,
+    "DieuKienThanhToan": "Theo khối lượng nghiệm thu hàng tháng",
+    "ChuTheKyA": "BQLDA VUDP-HCM",
+    "ChuTheKyB": "Nhà thầu C",
+    "IDHoSoNguon": "DOC-HD-CW03-001",
+    "URLDrive": "https://drive.google.com/file/example",
+    "TrangThai": "Hiệu lực",
+    "GhiChu": ""
+   },
+   {
+    "IDHopDong": "HD-CW04-01",
+    "SoHopDong": "04/2024/HĐ-VUDP",
+    "IDGoiThau": "PKG-CW04",
+    "LoaiVanBan": "HĐ gốc",
+    "IDHopDongGoc": "",
+    "TenHopDong": "HĐ thi công CW-04 - Data Center",
+    "NgayKy": "2024-05-15",
+    "NgayHieuLuc": "2024-06-01",
+    "NgayKetThuc": "2026-11-30",
+    "GiaTri_VND": 695000000000,
+    "TamUng_Percent": 0.15,
+    "GiuLaiBaoHanh_Percent": 0.05,
+    "DieuKienThanhToan": "Theo mốc hoàn thành hạng mục",
+    "ChuTheKyA": "BQLDA VUDP-HCM",
+    "ChuTheKyB": "Nhà thầu D",
+    "IDHoSoNguon": "DOC-HD-CW04-001",
+    "URLDrive": "https://drive.google.com/file/example",
+    "TrangThai": "Hiệu lực",
+    "GhiChu": ""
+   },
+   {
+    "IDHopDong": "HD-CW05-01",
+    "SoHopDong": "05/2024/HĐ-VUDP",
+    "IDGoiThau": "PKG-CW05",
+    "LoaiVanBan": "HĐ gốc",
+    "IDHopDongGoc": "",
+    "TenHopDong": "HĐ thi công CW-05 - Trạm XLNT",
+    "NgayKy": "2024-08-10",
+    "NgayHieuLuc": "2024-09-01",
+    "NgayKetThuc": "2026-12-31",
+    "GiaTri_VND": 462000000000,
+    "TamUng_Percent": 0.15,
+    "GiuLaiBaoHanh_Percent": 0.05,
+    "DieuKienThanhToan": "Theo mốc hoàn thành hạng mục",
+    "ChuTheKyA": "BQLDA VUDP-HCM",
+    "ChuTheKyB": "Nhà thầu E",
+    "IDHoSoNguon": "DOC-HD-CW05-001",
+    "URLDrive": "https://drive.google.com/file/example",
+    "TrangThai": "Hiệu lực",
+    "GhiChu": ""
+   },
+   {
+    "IDHopDong": "HD-CW05-PL01",
+    "SoHopDong": "05/2025/PL-VUDP",
+    "IDGoiThau": "PKG-CW05",
+    "LoaiVanBan": "Phụ lục",
+    "IDHopDongGoc": "HD-CW05-01",
+    "TenHopDong": "PL01 - Bổ sung thiết bị đo lường online",
+    "NgayKy": "2025-04-20",
+    "NgayHieuLuc": "2025-04-20",
+    "NgayKetThuc": "2026-12-31",
+    "GiaTri_VND": 8000000000,
+    "TamUng_Percent": 0,
+    "GiuLaiBaoHanh_Percent": 0.05,
+    "DieuKienThanhToan": "Kế thừa HĐ gốc",
+    "ChuTheKyA": "BQLDA VUDP-HCM",
+    "ChuTheKyB": "Nhà thầu E",
+    "IDHoSoNguon": "DOC-HD-CW05-002",
+    "URLDrive": "https://drive.google.com/file/example",
+    "TrangThai": "Hiệu lực",
+    "GhiChu": "Phát sinh do yêu cầu bổ sung của cơ quan môi trường"
+   }
+  ],
+  "Dim_NhaThau": [
+   {
+    "IDNhaThau": "NT-001",
+    "TenNhaThau": "Công ty CP Xây dựng A",
+    "TenViet_Tat": "Nhà thầu A",
+    "LoaiNhaThau": "Chính",
+    "QuocGia": "Việt Nam",
+    "MaSoThue": "0300000001",
+    "NguoiDaiDien": "Nguyễn Văn A",
+    "Email": "contact@nhathau-a.vn",
+    "DienThoai": "028-XXXX",
+    "DiaChi": "TP.HCM",
+    "NangLuc_ChuyenMon": "Xây dựng dân dụng, hạ tầng",
+    "SoDuAnDaLam": 45,
+    "GhiChu": ""
+   },
+   {
+    "IDNhaThau": "NT-002",
+    "TenNhaThau": "Liên danh B",
+    "TenViet_Tat": "Nhà thầu B",
+    "LoaiNhaThau": "Liên danh",
+    "QuocGia": "Việt Nam + Hàn Quốc",
+    "MaSoThue": "0300000002",
+    "NguoiDaiDien": "Trần Văn B",
+    "Email": "contact@lienDanh-b.vn",
+    "DienThoai": "028-XXXX",
+    "DiaChi": "TP.HCM",
+    "NangLuc_ChuyenMon": "Xây dựng công trình chuyên biệt, R&D",
+    "SoDuAnDaLam": 20,
+    "GhiChu": ""
+   },
+   {
+    "IDNhaThau": "NT-003",
+    "TenNhaThau": "Công ty TNHH Xây dựng C",
+    "TenViet_Tat": "Nhà thầu C",
+    "LoaiNhaThau": "Chính",
+    "QuocGia": "Việt Nam",
+    "MaSoThue": "0300000003",
+    "NguoiDaiDien": "Lê Văn C",
+    "Email": "contact@nhathau-c.vn",
+    "DienThoai": "028-XXXX",
+    "DiaChi": "TP.HCM",
+    "NangLuc_ChuyenMon": "Hoàn thiện, hạ tầng cảnh quan",
+    "SoDuAnDaLam": 30,
+    "GhiChu": ""
+   },
+   {
+    "IDNhaThau": "NT-004",
+    "TenNhaThau": "Công ty CP D",
+    "TenViet_Tat": "Nhà thầu D",
+    "LoaiNhaThau": "Chính",
+    "QuocGia": "Nhật Bản",
+    "MaSoThue": "0300000004",
+    "NguoiDaiDien": "Yamamoto D",
+    "Email": "contact@nhathau-d.jp",
+    "DienThoai": "028-XXXX",
+    "DiaChi": "Tokyo",
+    "NangLuc_ChuyenMon": "Data Center, ICT",
+    "SoDuAnDaLam": 60,
+    "GhiChu": ""
+   },
+   {
+    "IDNhaThau": "NT-005",
+    "TenNhaThau": "Công ty CP Môi trường E",
+    "TenViet_Tat": "Nhà thầu E",
+    "LoaiNhaThau": "Chính",
+    "QuocGia": "Việt Nam",
+    "MaSoThue": "0300000005",
+    "NguoiDaiDien": "Phạm Văn E",
+    "Email": "contact@nhathau-e.vn",
+    "DienThoai": "028-XXXX",
+    "DiaChi": "TP.HCM",
+    "NangLuc_ChuyenMon": "Xử lý nước thải, cơ điện",
+    "SoDuAnDaLam": 25,
+    "GhiChu": ""
+   }
+  ],
+  "Dim_TuVan": [
+   {
+    "IDTuVan": "TV-CS-001",
+    "TenTuVan": "Liên danh Tư vấn giám sát QT-1",
+    "LoaiTuVan": "Giám sát",
+    "QuocGia": "Việt Nam + Quốc tế",
+    "MaSoThue": "0300010001",
+    "NguoiDaiDien": "Trần Văn X",
+    "TruongDoan": "KS Nguyễn Văn Y",
+    "Email": "cs1@example.vn",
+    "DienThoai": "028-XXXX",
+    "DiaChi": "TP.HCM",
+    "ChuyenMon": "Giám sát xây dựng dân dụng, hạ tầng",
+    "GhiChu": ""
+   },
+   {
+    "IDTuVan": "TV-CS-002",
+    "TenTuVan": "Công ty Tư vấn giám sát 2",
+    "LoaiTuVan": "Giám sát",
+    "QuocGia": "Việt Nam",
+    "MaSoThue": "0300010002",
+    "NguoiDaiDien": "Lê Văn Z",
+    "TruongDoan": "KS Phạm Văn W",
+    "Email": "cs2@example.vn",
+    "DienThoai": "028-XXXX",
+    "DiaChi": "TP.HCM",
+    "ChuyenMon": "Giám sát hạ tầng, môi trường",
+    "GhiChu": ""
+   },
+   {
+    "IDTuVan": "TV-DS-001",
+    "TenTuVan": "Công ty Tư vấn thiết kế 1",
+    "LoaiTuVan": "Thiết kế",
+    "QuocGia": "Việt Nam",
+    "MaSoThue": "0300020001",
+    "NguoiDaiDien": "Nguyễn Văn Q",
+    "TruongDoan": "KTS Hoàng Văn R",
+    "Email": "ds1@example.vn",
+    "DienThoai": "028-XXXX",
+    "DiaChi": "TP.HCM",
+    "ChuyenMon": "Thiết kế công trình dân dụng, giáo dục y tế",
+    "GhiChu": ""
+   },
+   {
+    "IDTuVan": "TV-DS-002",
+    "TenTuVan": "Công ty Tư vấn thiết kế 2",
+    "LoaiTuVan": "Thiết kế",
+    "QuocGia": "Việt Nam",
+    "MaSoThue": "0300020002",
+    "NguoiDaiDien": "Trần Văn S",
+    "TruongDoan": "KS Đỗ Văn T",
+    "Email": "ds2@example.vn",
+    "DienThoai": "028-XXXX",
+    "DiaChi": "TP.HCM",
+    "ChuyenMon": "Thiết kế cảnh quan, hạ tầng đô thị",
+    "GhiChu": ""
+   },
+   {
+    "IDTuVan": "TV-DS-003",
+    "TenTuVan": "Công ty Tư vấn thiết kế chuyên ngành 3",
+    "LoaiTuVan": "Thiết kế",
+    "QuocGia": "Việt Nam",
+    "MaSoThue": "0300020003",
+    "NguoiDaiDien": "Lê Văn U",
+    "TruongDoan": "KS Vũ Văn V",
+    "Email": "ds3@example.vn",
+    "DienThoai": "028-XXXX",
+    "DiaChi": "TP.HCM",
+    "ChuyenMon": "Thiết kế cơ điện, ICT, môi trường",
+    "GhiChu": ""
+   }
+  ],
+  "Dim_ThoiGian": [
+   {
+    "IDNgay": "2025-01-01",
+    "Nam": 2025,
+    "Quy": "Q1",
+    "Thang": 1,
+    "TenThang": "Tháng 1",
+    "Tuan": 1,
+    "NgayTrongTuan": "Thứ Tư",
+    "LaCuoiThang": "",
+    "LaLamViec": "",
+    "NamTaiChinh": "FY2025"
+   },
+   {
+    "IDNgay": "2025-06-30",
+    "Nam": 2025,
+    "Quy": "Q2",
+    "Thang": 6,
+    "TenThang": "Tháng 6",
+    "Tuan": 27,
+    "NgayTrongTuan": "Thứ Hai",
+    "LaCuoiThang": "TRUE",
+    "LaLamViec": "TRUE",
+    "NamTaiChinh": "FY2025"
+   },
+   {
+    "IDNgay": "2025-12-31",
+    "Nam": 2025,
+    "Quy": "Q4",
+    "Thang": 12,
+    "TenThang": "Tháng 12",
+    "Tuan": 1,
+    "NgayTrongTuan": "Thứ Tư",
+    "LaCuoiThang": "TRUE",
+    "LaLamViec": "TRUE",
+    "NamTaiChinh": "FY2025"
+   },
+   {
+    "IDNgay": "2026-06-30",
+    "Nam": 2026,
+    "Quy": "Q2",
+    "Thang": 6,
+    "TenThang": "Tháng 6",
+    "Tuan": 27,
+    "NgayTrongTuan": "Thứ Ba",
+    "LaCuoiThang": "TRUE",
+    "LaLamViec": "TRUE",
+    "NamTaiChinh": "FY2026"
+   },
+   {
+    "IDNgay": "2026-12-31",
+    "Nam": 2026,
+    "Quy": "Q4",
+    "Thang": 12,
+    "TenThang": "Tháng 12",
+    "Tuan": 53,
+    "NgayTrongTuan": "Thứ Năm",
+    "LaCuoiThang": "TRUE",
+    "LaLamViec": "TRUE",
+    "NamTaiChinh": "FY2026"
+   }
+  ],
+  "Dim_HoSo": [
+   {
+    "IDHoSo": "DOC-HD-CW01-001",
+    "IDDuAn": "PRJ-VUDPHCM",
+    "IDGoiThau": "PKG-CW01",
+    "IDHopDong": "HD-CW01-01",
+    "NhomHoSo": "4.HĐ+PL",
+    "LoaiHoSo": "Hợp đồng",
+    "TieuDe": "HĐ thi công CW-01",
+    "SoHieu": "01/2023/HĐ-VUDP",
+    "PhienBan": "Rev.0",
+    "NgayPhatHanh": "2023-05-15",
+    "NgayHieuLuc": "2023-06-01",
+    "TrangThai": "Hiệu lực",
+    "DonViPhatHanh": "BQLDA VUDP-HCM",
+    "IDCongViecLienQuan": "",
+    "IDThanhToanLienQuan": "",
+    "IDDieuKhoanLienQuan": "",
+    "DuongDanDrive": "https://drive.google.com/file/example",
+    "MaFileDrive": "1abcExample",
+    "TrangThaiOCR": "Đã OCR",
+    "TrangThaiTrichXuatAI": "Đã trích xuất",
+    "NgayCapNhat": "2025-01-15"
+   },
+   {
+    "IDHoSo": "DOC-BOQ-CW01-001",
+    "IDDuAn": "PRJ-VUDPHCM",
+    "IDGoiThau": "PKG-CW01",
+    "IDHopDong": "HD-CW01-01",
+    "NhomHoSo": "4.HĐ+PL",
+    "LoaiHoSo": "BOQ",
+    "TieuDe": "BOQ CW-01 kèm HĐ gốc",
+    "SoHieu": "BOQ-CW01-Rev0",
+    "PhienBan": "Rev.0",
+    "NgayPhatHanh": "2023-05-15",
+    "NgayHieuLuc": "2023-06-01",
+    "TrangThai": "Hiệu lực",
+    "DonViPhatHanh": "BQLDA VUDP-HCM",
+    "IDCongViecLienQuan": "",
+    "IDThanhToanLienQuan": "",
+    "IDDieuKhoanLienQuan": "",
+    "DuongDanDrive": "https://drive.google.com/file/example",
+    "MaFileDrive": "1abcExample2",
+    "TrangThaiOCR": "Đã OCR",
+    "TrangThaiTrichXuatAI": "Đã trích xuất",
+    "NgayCapNhat": "2025-01-15"
+   },
+   {
+    "IDHoSo": "DOC-NT-CW01-005",
+    "IDDuAn": "PRJ-VUDPHCM",
+    "IDGoiThau": "PKG-CW01",
+    "IDHopDong": "HD-CW01-01",
+    "NhomHoSo": "6.Nghiệm thu-TT",
+    "LoaiHoSo": "Biên bản nghiệm thu",
+    "TieuDe": "BBNT KL tháng 06/2025",
+    "SoHieu": "BBNT-CW01-2025.06",
+    "PhienBan": "Rev.0",
+    "NgayPhatHanh": "2025-07-05",
+    "NgayHieuLuc": "2025-07-05",
+    "TrangThai": "Hiệu lực",
+    "DonViPhatHanh": "BQLDA + TVGS + Nhà thầu",
+    "IDCongViecLienQuan": "TASK-CW01-005",
+    "IDThanhToanLienQuan": "PMT-CW01-006",
+    "IDDieuKhoanLienQuan": "CLS-CW01-005",
+    "DuongDanDrive": "https://drive.google.com/file/example",
+    "MaFileDrive": "1abcExample3",
+    "TrangThaiOCR": "Đã OCR",
+    "TrangThaiTrichXuatAI": "Đã trích xuất",
+    "NgayCapNhat": "2025-07-06"
+   },
+   {
+    "IDHoSo": "DOC-HD-CW05-001",
+    "IDDuAn": "PRJ-VUDPHCM",
+    "IDGoiThau": "PKG-CW05",
+    "IDHopDong": "HD-CW05-01",
+    "NhomHoSo": "4.HĐ+PL",
+    "LoaiHoSo": "Hợp đồng",
+    "TieuDe": "HĐ thi công CW-05 - Trạm XLNT",
+    "SoHieu": "05/2024/HĐ-VUDP",
+    "PhienBan": "Rev.0",
+    "NgayPhatHanh": "2024-08-10",
+    "NgayHieuLuc": "2024-09-01",
+    "TrangThai": "Hiệu lực",
+    "DonViPhatHanh": "BQLDA VUDP-HCM",
+    "IDCongViecLienQuan": "",
+    "IDThanhToanLienQuan": "",
+    "IDDieuKhoanLienQuan": "",
+    "DuongDanDrive": "https://drive.google.com/file/example",
+    "MaFileDrive": "1abcExample4",
+    "TrangThaiOCR": "Đã OCR",
+    "TrangThaiTrichXuatAI": "Đã trích xuất",
+    "NgayCapNhat": "2025-01-15"
+   }
+  ],
+  "Dim_BOQ": [
+   {
+    "IDHangMucBOQ": "BOQ-CW01-1.1.01",
+    "IDGoiThau": "PKG-CW01",
+    "IDHopDong": "HD-CW01-01",
+    "MaChuong": "I.1",
+    "MaHangMuc": "1.1.01",
+    "MoTa": "Đào đất móng bằng máy đào <=0.8m3 cấp III",
+    "DonVi": "m3",
+    "KhoiLuong_HD": 12500,
+    "DonGia_HD": 85000,
+    "ThanhTien_HD": 1062500000,
+    "NhomChiPhi": "Xây lắp",
+    "MucCa": "Chương I - Phần ngầm",
+    "GhiChu": ""
+   },
+   {
+    "IDHangMucBOQ": "BOQ-CW01-1.2.03",
+    "IDGoiThau": "PKG-CW01",
+    "IDHopDong": "HD-CW01-01",
+    "MaChuong": "I.2",
+    "MaHangMuc": "1.2.03",
+    "MoTa": "Bê tông móng M300 đá 1x2",
+    "DonVi": "m3",
+    "KhoiLuong_HD": 3800,
+    "DonGia_HD": 1450000,
+    "ThanhTien_HD": 5510000000,
+    "NhomChiPhi": "Xây lắp",
+    "MucCa": "Chương I - Phần ngầm",
+    "GhiChu": ""
+   },
+   {
+    "IDHangMucBOQ": "BOQ-CW01-2.1.01",
+    "IDGoiThau": "PKG-CW01",
+    "IDHopDong": "HD-CW01-01",
+    "MaChuong": "II.1",
+    "MaHangMuc": "2.1.01",
+    "MoTa": "Cột BTCT M300 tầng điển hình",
+    "DonVi": "m3",
+    "KhoiLuong_HD": 1200,
+    "DonGia_HD": 1780000,
+    "ThanhTien_HD": 2136000000,
+    "NhomChiPhi": "Xây lắp",
+    "MucCa": "Chương II - Phần thân",
+    "GhiChu": ""
+   },
+   {
+    "IDHangMucBOQ": "BOQ-CW05-3.1.02",
+    "IDGoiThau": "PKG-CW05",
+    "IDHopDong": "HD-CW05-01",
+    "MaChuong": "III.1",
+    "MaHangMuc": "3.1.02",
+    "MoTa": "Bể lắng SBR - cung cấp và lắp đặt thiết bị",
+    "DonVi": "bộ",
+    "KhoiLuong_HD": 4,
+    "DonGia_HD": 18500000000,
+    "ThanhTien_HD": 74000000000,
+    "NhomChiPhi": "Thiết bị",
+    "MucCa": "Chương III - Công nghệ XLNT",
+    "GhiChu": ""
+   }
+  ],
+  "Dim_HoatDong": [
+   {
+    "IDHoatDong": "ACT-CW01-100",
+    "IDGoiThau": "PKG-CW01",
+    "MaWBS": "1",
+    "TenHoatDong": "Phần ngầm - móng",
+    "IDHoatDongCha": "",
+    "CapDo": 1,
+    "LoaiHoatDong": "Summary",
+    "IDHangMucBOQLienQuan": "",
+    "NgayBatDauBaseline": "2023-06-01",
+    "NgayKetThucBaseline": "2023-12-31",
+    "ThoiLuong_Ngay": 213,
+    "TrongSo_Percent": 0.2,
+    "GiaTriKeHoach_PV": 164000000000,
+    "NguoiPhuTrach": "CH trưởng CW01",
+    "TrangThai": "Hoàn thành"
+   },
+   {
+    "IDHoatDong": "ACT-CW01-110",
+    "IDGoiThau": "PKG-CW01",
+    "MaWBS": "1.1",
+    "TenHoatDong": "Đào đất - Cọc - Móng",
+    "IDHoatDongCha": "ACT-CW01-100",
+    "CapDo": 2,
+    "LoaiHoatDong": "Task",
+    "IDHangMucBOQLienQuan": "BOQ-CW01-1.1.01",
+    "NgayBatDauBaseline": "2023-06-01",
+    "NgayKetThucBaseline": "2023-10-31",
+    "ThoiLuong_Ngay": 153,
+    "TrongSo_Percent": 0.12,
+    "GiaTriKeHoach_PV": 98400000000,
+    "NguoiPhuTrach": "Đội trưởng ngầm",
+    "TrangThai": "Hoàn thành"
+   },
+   {
+    "IDHoatDong": "ACT-CW01-200",
+    "IDGoiThau": "PKG-CW01",
+    "MaWBS": "2",
+    "TenHoatDong": "Phần thân - Kết cấu",
+    "IDHoatDongCha": "",
+    "CapDo": 1,
+    "LoaiHoatDong": "Summary",
+    "IDHangMucBOQLienQuan": "",
+    "NgayBatDauBaseline": "2024-01-01",
+    "NgayKetThucBaseline": "2025-06-30",
+    "ThoiLuong_Ngay": 546,
+    "TrongSo_Percent": 0.45,
+    "GiaTriKeHoach_PV": 369000000000,
+    "NguoiPhuTrach": "CH trưởng CW01",
+    "TrangThai": "Đang thi công"
+   },
+   {
+    "IDHoatDong": "ACT-CW05-300",
+    "IDGoiThau": "PKG-CW05",
+    "MaWBS": "3",
+    "TenHoatDong": "Lắp đặt thiết bị công nghệ",
+    "IDHoatDongCha": "",
+    "CapDo": 1,
+    "LoaiHoatDong": "Summary",
+    "IDHangMucBOQLienQuan": "",
+    "NgayBatDauBaseline": "2025-06-01",
+    "NgayKetThucBaseline": "2026-06-30",
+    "ThoiLuong_Ngay": 395,
+    "TrongSo_Percent": 0.55,
+    "GiaTriKeHoach_PV": 258500000000,
+    "NguoiPhuTrach": "CH trưởng CW05",
+    "TrangThai": "Đang thi công"
+   }
+  ],
+  "Dim_DieuKhoan": [
+   {
+    "IDDieuKhoan": "CLS-CW01-005",
+    "IDHopDong": "HD-CW01-01",
+    "IDGoiThau": "PKG-CW01",
+    "SoDieu": "Điều 5",
+    "TieuDe": "Điều kiện thanh toán",
+    "LoaiDieuKhoan": "Thanh toán",
+    "NghiaVuBenA": "Thanh toán 90% khối lượng nghiệm thu trong 30 ngày kể từ ngày nhận đủ hồ sơ",
+    "NghiaVuBenB": "Cung cấp hồ sơ nghiệm thu đầy đủ theo phụ lục 3",
+    "HanChotThucHien": "",
+    "TrangThai": "Đang hiệu lực",
+    "IDHoSoNguon": "DOC-HD-CW01-001",
+    "TrangSoTrong_File": "trang 12-14",
+    "DoTinCay_AI": 0.92,
+    "PhienDich_AI": "Thanh toán 90%, giữ lại 10% (5% giữ lại bảo hành + 5% khác)",
+    "GhiChu": "Cần con người xác nhận"
+   },
+   {
+    "IDDieuKhoan": "CLS-CW01-014",
+    "IDHopDong": "HD-CW01-01",
+    "IDGoiThau": "PKG-CW01",
+    "SoDieu": "Điều 14",
+    "TieuDe": "Bảo lãnh thực hiện hợp đồng",
+    "LoaiDieuKhoan": "Bảo lãnh",
+    "NghiaVuBenA": "Hoàn trả bảo lãnh trong 15 ngày sau khi bàn giao",
+    "NghiaVuBenB": "Nộp BLTHHĐ 10% giá trị HĐ trong 15 ngày sau khi ký, hiệu lực đến khi nghiệm thu bàn giao",
+    "HanChotThucHien": "2026-06-15",
+    "TrangThai": "Đang hiệu lực",
+    "IDHoSoNguon": "DOC-HD-CW01-001",
+    "TrangSoTrong_File": "trang 25",
+    "DoTinCay_AI": 0.95,
+    "PhienDich_AI": "BLTHHĐ 82 tỷ VNĐ, cần gia hạn nếu HĐ kéo dài quá 2026-05-31",
+    "GhiChu": ""
+   },
+   {
+    "IDDieuKhoan": "CLS-CW05-020",
+    "IDHopDong": "HD-CW05-01",
+    "IDGoiThau": "PKG-CW05",
+    "SoDieu": "Điều 20",
+    "TieuDe": "Chậm tiến độ và phạt HĐ",
+    "LoaiDieuKhoan": "Phạt",
+    "NghiaVuBenA": "Có quyền phạt tối đa 12% giá trị HĐ",
+    "NghiaVuBenB": "Phạt 0.05%/ngày cho phần khối lượng chậm; tối đa 12%",
+    "HanChotThucHien": "",
+    "TrangThai": "Đang hiệu lực",
+    "IDHoSoNguon": "DOC-HD-CW05-001",
+    "TrangSoTrong_File": "trang 30-31",
+    "DoTinCay_AI": 0.9,
+    "PhienDich_AI": "LD = 0.05%/day, cap 12% (~55.4 tỷ VNĐ)",
+    "GhiChu": ""
+   }
+  ],
+  "Dim_CongViec": [
+   {
+    "IDCongViec": "TASK-CW01-005",
+    "TieuDe": "Rà soát HS nghiệm thu tháng 06/2025 CW-01",
+    "MoTa": "Kiểm tra đủ BBNT, bảng KL, file chụp hiện trường trước khi ký thanh toán đợt 6",
+    "IDGoiThau": "PKG-CW01",
+    "IDHopDong": "HD-CW01-01",
+    "IDDieuKhoanLienQuan": "CLS-CW01-005",
+    "IDHoSoLienQuan": "DOC-NT-CW01-005",
+    "IDThanhToanLienQuan": "PMT-CW01-006",
+    "MucDoUuTien": "Cao",
+    "TrangThai": "Hôm nay",
+    "NguoiPhuTrach": "PM CW01",
+    "NgayBatDau": "2025-07-06",
+    "HanChot": "2025-07-10",
+    "NgayTao": "2025-07-05",
+    "NgayHoanThanh": "",
+    "NguonTao": "AI Alert",
+    "GhiChu": "AI phát hiện thiếu 1 phụ lục ảnh hiện trường"
+   },
+   {
+    "IDCongViec": "TASK-CW04-012",
+    "TieuDe": "Gia hạn BLTHHĐ CW-04",
+    "MoTa": "BLTHHĐ Data Center hết hạn 2026-01-15, cần yêu cầu Nhà thầu D gia hạn trước 2025-11-15",
+    "IDGoiThau": "PKG-CW04",
+    "IDHopDong": "HD-CW04-01",
+    "IDDieuKhoanLienQuan": "",
+    "IDHoSoLienQuan": "",
+    "IDThanhToanLienQuan": "",
+    "MucDoUuTien": "Trung bình",
+    "TrangThai": "Sắp tới",
+    "NguoiPhuTrach": "Chuyên viên HĐ",
+    "NgayBatDau": "2025-11-01",
+    "HanChot": "2025-11-15",
+    "NgayTao": "2025-09-01",
+    "NgayHoanThanh": "",
+    "NguonTao": "AI Alert",
+    "GhiChu": ""
+   },
+   {
+    "IDCongViec": "TASK-CW05-020",
+    "TieuDe": "Xem xét PL01 CW-05 - Bổ sung thiết bị đo lường",
+    "MoTa": "Kiểm tra khối lượng, đơn giá phụ lục 01 gói CW-05",
+    "IDGoiThau": "PKG-CW05",
+    "IDHopDong": "HD-CW05-PL01",
+    "IDDieuKhoanLienQuan": "",
+    "IDHoSoLienQuan": "DOC-HD-CW05-002",
+    "IDThanhToanLienQuan": "",
+    "MucDoUuTien": "Cao",
+    "TrangThai": "Hoàn thành",
+    "NguoiPhuTrach": "KS dự toán",
+    "NgayBatDau": "2025-04-01",
+    "HanChot": "2025-04-20",
+    "NgayTao": "2025-03-25",
+    "NgayHoanThanh": "2025-04-18",
+    "NguonTao": "Thủ công",
+    "GhiChu": ""
+   }
+  ],
+  "Dim_TrangThai": [
+   {
+    "IDTrangThai": "ST-GOI-CB",
+    "NhomTrangThai": "Gói thầu",
+    "TenTrangThai": "Chuẩn bị",
+    "ThuTuSapXep": 1,
+    "MauHex": "#BFBFBF",
+    "MoTa": "Đang chuẩn bị mời thầu"
+   },
+   {
+    "IDTrangThai": "ST-GOI-DT",
+    "NhomTrangThai": "Gói thầu",
+    "TenTrangThai": "Đấu thầu",
+    "ThuTuSapXep": 2,
+    "MauHex": "#FFC000",
+    "MoTa": "Đang trong quá trình đấu thầu"
+   },
+   {
+    "IDTrangThai": "ST-GOI-DTC",
+    "NhomTrangThai": "Gói thầu",
+    "TenTrangThai": "Đang thi công",
+    "ThuTuSapXep": 3,
+    "MauHex": "#2E75B6",
+    "MoTa": "Đang thi công"
+   },
+   {
+    "IDTrangThai": "ST-GOI-BH",
+    "NhomTrangThai": "Gói thầu",
+    "TenTrangThai": "Bảo hành",
+    "ThuTuSapXep": 4,
+    "MauHex": "#7030A0",
+    "MoTa": "Trong thời gian bảo hành"
+   },
+   {
+    "IDTrangThai": "ST-GOI-QT",
+    "NhomTrangThai": "Gói thầu",
+    "TenTrangThai": "Quyết toán",
+    "ThuTuSapXep": 5,
+    "MauHex": "#00B050",
+    "MoTa": "Hoàn tất quyết toán"
+   },
+   {
+    "IDTrangThai": "ST-HD-HL",
+    "NhomTrangThai": "Hợp đồng",
+    "TenTrangThai": "Hiệu lực",
+    "ThuTuSapXep": 1,
+    "MauHex": "#00B050",
+    "MoTa": ""
+   },
+   {
+    "IDTrangThai": "ST-HD-HH",
+    "NhomTrangThai": "Hợp đồng",
+    "TenTrangThai": "Hết hạn",
+    "ThuTuSapXep": 2,
+    "MauHex": "#C00000",
+    "MoTa": ""
+   },
+   {
+    "IDTrangThai": "ST-TT-CD",
+    "NhomTrangThai": "Thanh toán",
+    "TenTrangThai": "Chờ duyệt",
+    "ThuTuSapXep": 1,
+    "MauHex": "#FFC000",
+    "MoTa": ""
+   },
+   {
+    "IDTrangThai": "ST-TT-DD",
+    "NhomTrangThai": "Thanh toán",
+    "TenTrangThai": "Đã duyệt",
+    "ThuTuSapXep": 2,
+    "MauHex": "#2E75B6",
+    "MoTa": ""
+   },
+   {
+    "IDTrangThai": "ST-TT-DTT",
+    "NhomTrangThai": "Thanh toán",
+    "TenTrangThai": "Đã thanh toán",
+    "ThuTuSapXep": 3,
+    "MauHex": "#00B050",
+    "MoTa": ""
+   },
+   {
+    "IDTrangThai": "ST-CV-HN",
+    "NhomTrangThai": "Công việc",
+    "TenTrangThai": "Hôm nay",
+    "ThuTuSapXep": 1,
+    "MauHex": "#2E75B6",
+    "MoTa": ""
+   },
+   {
+    "IDTrangThai": "ST-CV-ST",
+    "NhomTrangThai": "Công việc",
+    "TenTrangThai": "Sắp tới",
+    "ThuTuSapXep": 2,
+    "MauHex": "#FFC000",
+    "MoTa": ""
+   },
+   {
+    "IDTrangThai": "ST-CV-QH",
+    "NhomTrangThai": "Công việc",
+    "TenTrangThai": "Quá hạn",
+    "ThuTuSapXep": 3,
+    "MauHex": "#C00000",
+    "MoTa": ""
+   },
+   {
+    "IDTrangThai": "ST-CV-CX",
+    "NhomTrangThai": "Công việc",
+    "TenTrangThai": "Chờ xử lý",
+    "ThuTuSapXep": 4,
+    "MauHex": "#BFBFBF",
+    "MoTa": ""
+   },
+   {
+    "IDTrangThai": "ST-CV-HT",
+    "NhomTrangThai": "Công việc",
+    "TenTrangThai": "Hoàn thành",
+    "ThuTuSapXep": 5,
+    "MauHex": "#00B050",
+    "MoTa": ""
+   },
+   {
+    "IDTrangThai": "ST-CB-P0",
+    "NhomTrangThai": "Cảnh báo",
+    "TenTrangThai": "P0 - Nghiêm trọng",
+    "ThuTuSapXep": 1,
+    "MauHex": "#C00000",
+    "MoTa": ""
+   },
+   {
+    "IDTrangThai": "ST-CB-P1",
+    "NhomTrangThai": "Cảnh báo",
+    "TenTrangThai": "P1 - Cao",
+    "ThuTuSapXep": 2,
+    "MauHex": "#ED7D31",
+    "MoTa": ""
+   },
+   {
+    "IDTrangThai": "ST-CB-P2",
+    "NhomTrangThai": "Cảnh báo",
+    "TenTrangThai": "P2 - Trung bình",
+    "ThuTuSapXep": 3,
+    "MauHex": "#FFC000",
+    "MoTa": ""
+   },
+   {
+    "IDTrangThai": "ST-CB-P3",
+    "NhomTrangThai": "Cảnh báo",
+    "TenTrangThai": "P3 - Thấp",
+    "ThuTuSapXep": 4,
+    "MauHex": "#BFBFBF",
+    "MoTa": ""
+   }
+  ],
+  "Dim_RuiRo": [
+   {
+    "IDRuiRo": "R-TIME-001",
+    "NhomRuiRo": "Thời gian",
+    "TenRuiRo": "Trễ tiến độ do thời tiết",
+    "MoTa": "Mưa lớn kéo dài ảnh hưởng thi công móng, ngầm",
+    "TacDongTiemAn": "Trễ 15-30 ngày",
+    "MucDoTacDong_MacDinh": "Trung bình",
+    "XacSuat_MacDinh": "Cao",
+    "BienPhapPhongNgua": "Lập kế hoạch dự phòng theo mùa mưa TP.HCM",
+    "BienPhapUngPho": "Tăng ca, thi công hạng mục khác trong nhà",
+    "NguoiPhuTrach_MacDinh": "PM gói thầu"
+   },
+   {
+    "IDRuiRo": "R-COST-001",
+    "NhomRuiRo": "Chi phí",
+    "TenRuiRo": "Trượt giá vật liệu",
+    "MoTa": "Giá thép/xi măng biến động >10%",
+    "TacDongTiemAn": "Chi phí tăng, có thể phát sinh phụ lục điều chỉnh",
+    "MucDoTacDong_MacDinh": "Cao",
+    "XacSuat_MacDinh": "Trung bình",
+    "BienPhapPhongNgua": "Chốt giá vật liệu chính trong HĐ, dự phòng chi phí",
+    "BienPhapUngPho": "Xem xét điều khoản điều chỉnh giá trong HĐ",
+    "NguoiPhuTrach_MacDinh": "KS Chi phí"
+   },
+   {
+    "IDRuiRo": "R-DOC-001",
+    "NhomRuiRo": "Hồ sơ",
+    "TenRuiRo": "Thiếu HS nghiệm thu khi thanh toán",
+    "MoTa": "Hồ sơ nghiệm thu không đủ theo yêu cầu WB/HĐ",
+    "TacDongTiemAn": "Chậm thanh toán 1-3 tháng",
+    "MucDoTacDong_MacDinh": "Cao",
+    "XacSuat_MacDinh": "Cao",
+    "BienPhapPhongNgua": "Checklist hồ sơ trước khi trình + AI rà soát tự động",
+    "BienPhapUngPho": "Bổ sung ngay khi phát hiện thiếu",
+    "NguoiPhuTrach_MacDinh": "Chuyên viên hồ sơ"
+   },
+   {
+    "IDRuiRo": "R-HD-001",
+    "NhomRuiRo": "Hợp đồng",
+    "TenRuiRo": "BLTHHĐ hết hạn không gia hạn",
+    "MoTa": "Bảo lãnh thực hiện HĐ hết hạn trong khi HĐ chưa nghiệm thu bàn giao",
+    "TacDongTiemAn": "Mất bảo đảm HĐ, vi phạm HĐ",
+    "MucDoTacDong_MacDinh": "Nghiêm trọng",
+    "XacSuat_MacDinh": "Trung bình",
+    "BienPhapPhongNgua": "Nhắc gia hạn trước 45 ngày, AI alert tự động",
+    "BienPhapUngPho": "Yêu cầu Nhà thầu gia hạn ngay, có văn bản chính thức",
+    "NguoiPhuTrach_MacDinh": "Chuyên viên HĐ"
+   },
+   {
+    "IDRuiRo": "R-WB-001",
+    "NhomRuiRo": "ODA-WB",
+    "TenRuiRo": "Không tuân thủ quy trình mua sắm WB",
+    "MoTa": "Vi phạm Procurement Regulations của WB",
+    "TacDongTiemAn": "Không hợp lệ để giải ngân, phải hoàn trả",
+    "MucDoTacDong_MacDinh": "Nghiêm trọng",
+    "XacSuat_MacDinh": "Thấp",
+    "BienPhapPhongNgua": "Rà soát quy trình theo Procurement Plan đã duyệt",
+    "BienPhapUngPho": "Báo cáo WB, xin hướng dẫn khắc phục",
+    "NguoiPhuTrach_MacDinh": "Chuyên viên đấu thầu"
+   }
+  ],
+  "Fact_TienDo": [
+   {
+    "IDBanGhi": "TD-CW01-202503",
+    "IDGoiThau": "PKG-CW01",
+    "IDHoatDong": "",
+    "IDHangMucBOQ": "",
+    "IDNgayBaoCao": "2025-03-31",
+    "KyBaoCao": "2025-03",
+    "TienDo_KeHoach_Percent": 0.45,
+    "TienDo_ThucTe_Percent": 0.42,
+    "SaiLech_Percent": -0.03,
+    "KhoiLuong_ThucHien_Kỳ": 0,
+    "KhoiLuong_LuyKe": 0,
+    "GiaTri_ThucHien_KyVND": 42000000000,
+    "GiaTri_LuyKe_VND": 350700000000,
+    "NgayCapNhat": "2025-04-05",
+    "NguoiCapNhat": "PM CW01",
+    "IDHoSoNguon": "",
+    "GhiChu": "Chậm nhẹ 3%"
+   },
+   {
+    "IDBanGhi": "TD-CW01-202506",
+    "IDGoiThau": "PKG-CW01",
+    "IDHoatDong": "",
+    "IDHangMucBOQ": "",
+    "IDNgayBaoCao": "2025-06-30",
+    "KyBaoCao": "2025-06",
+    "TienDo_KeHoach_Percent": 0.6,
+    "TienDo_ThucTe_Percent": 0.55,
+    "SaiLech_Percent": -0.05,
+    "KhoiLuong_ThucHien_Kỳ": 0,
+    "KhoiLuong_LuyKe": 0,
+    "GiaTri_ThucHien_KyVND": 108500000000,
+    "GiaTri_LuyKe_VND": 459250000000,
+    "NgayCapNhat": "2025-07-05",
+    "NguoiCapNhat": "PM CW01",
+    "IDHoSoNguon": "DOC-NT-CW01-005",
+    "GhiChu": "Trễ do mưa lớn 05-06/2025"
+   },
+   {
+    "IDBanGhi": "TD-CW02-202506",
+    "IDGoiThau": "PKG-CW02",
+    "IDHoatDong": "",
+    "IDHangMucBOQ": "",
+    "IDNgayBaoCao": "2025-06-30",
+    "KyBaoCao": "2025-06",
+    "TienDo_KeHoach_Percent": 0.55,
+    "TienDo_ThucTe_Percent": 0.58,
+    "SaiLech_Percent": 0.03,
+    "KhoiLuong_ThucHien_Kỳ": 0,
+    "KhoiLuong_LuyKe": 0,
+    "GiaTri_ThucHien_KyVND": 65340000000,
+    "GiaTri_LuyKe_VND": 350900000000,
+    "NgayCapNhat": "2025-07-05",
+    "NguoiCapNhat": "PM CW02",
+    "IDHoSoNguon": "",
+    "GhiChu": "Vượt kế hoạch"
+   },
+   {
+    "IDBanGhi": "TD-CW03-202506",
+    "IDGoiThau": "PKG-CW03",
+    "IDHoatDong": "",
+    "IDHangMucBOQ": "",
+    "IDNgayBaoCao": "2025-06-30",
+    "KyBaoCao": "2025-06",
+    "TienDo_KeHoach_Percent": 0.65,
+    "TienDo_ThucTe_Percent": 0.6,
+    "SaiLech_Percent": -0.05,
+    "KhoiLuong_ThucHien_Kỳ": 0,
+    "KhoiLuong_LuyKe": 0,
+    "GiaTri_ThucHien_KyVND": 32850000000,
+    "GiaTri_LuyKe_VND": 219000000000,
+    "NgayCapNhat": "2025-07-05",
+    "NguoiCapNhat": "PM CW03",
+    "IDHoSoNguon": "",
+    "GhiChu": ""
+   },
+   {
+    "IDBanGhi": "TD-CW04-202506",
+    "IDGoiThau": "PKG-CW04",
+    "IDHoatDong": "",
+    "IDHangMucBOQ": "",
+    "IDNgayBaoCao": "2025-06-30",
+    "KyBaoCao": "2025-06",
+    "TienDo_KeHoach_Percent": 0.4,
+    "TienDo_ThucTe_Percent": 0.35,
+    "SaiLech_Percent": -0.05,
+    "KhoiLuong_ThucHien_Kỳ": 0,
+    "KhoiLuong_LuyKe": 0,
+    "GiaTri_ThucHien_KyVND": 76450000000,
+    "GiaTri_LuyKe_VND": 243250000000,
+    "NgayCapNhat": "2025-07-05",
+    "NguoiCapNhat": "PM CW04",
+    "IDHoSoNguon": "",
+    "GhiChu": "Chậm do nhập thiết bị"
+   },
+   {
+    "IDBanGhi": "TD-CW05-202506",
+    "IDGoiThau": "PKG-CW05",
+    "IDHoatDong": "",
+    "IDHangMucBOQ": "",
+    "IDNgayBaoCao": "2025-06-30",
+    "KyBaoCao": "2025-06",
+    "TienDo_KeHoach_Percent": 0.3,
+    "TienDo_ThucTe_Percent": 0.25,
+    "SaiLech_Percent": -0.05,
+    "KhoiLuong_ThucHien_Kỳ": 0,
+    "KhoiLuong_LuyKe": 0,
+    "GiaTri_ThucHien_KyVND": 47000000000,
+    "GiaTri_LuyKe_VND": 117500000000,
+    "NgayCapNhat": "2025-07-05",
+    "NguoiCapNhat": "PM CW05",
+    "IDHoSoNguon": "",
+    "GhiChu": "Chậm 5% do phụ lục PL01"
+   }
+  ],
+  "Fact_ThanhToan": [
+   {
+    "IDThanhToan": "PMT-CW01-001",
+    "SoDot": 1,
+    "LoaiThanhToan": "Tạm ứng",
+    "IDGoiThau": "PKG-CW01",
+    "IDHopDong": "HD-CW01-01",
+    "IDNhaThau": "NT-001",
+    "IDNgayTrinh": "2023-06-10",
+    "IDNgayDuyet": "2023-06-25",
+    "IDNgayThanhToan": "2023-07-05",
+    "GiaTri_DeNghi_VND": 123000000000,
+    "GiaTri_ChungNhan_VND": 123000000000,
+    "GiaTri_DuocDuyet_VND": 123000000000,
+    "TamUng_KhauTru_VND": 0,
+    "GiuLai_BaoHanh_VND": 0,
+    "Thue_KhauTru_VND": 0,
+    "PhatLD_VND": 0,
+    "GiaTri_ThanhToan_ThucVND": 123000000000,
+    "TrangThai": "Đã thanh toán",
+    "IDHoSoNghiemThu": "",
+    "IDHoSoThanhToan": "",
+    "GhiChu": "Tạm ứng 15% giá HĐ"
+   },
+   {
+    "IDThanhToan": "PMT-CW01-005",
+    "SoDot": 5,
+    "LoaiThanhToan": "Nghiệm thu KL",
+    "IDGoiThau": "PKG-CW01",
+    "IDHopDong": "HD-CW01-01",
+    "IDNhaThau": "NT-001",
+    "IDNgayTrinh": "2025-04-10",
+    "IDNgayDuyet": "2025-04-25",
+    "IDNgayThanhToan": "2025-05-10",
+    "GiaTri_DeNghi_VND": 55000000000,
+    "GiaTri_ChungNhan_VND": 53500000000,
+    "GiaTri_DuocDuyet_VND": 53500000000,
+    "TamUng_KhauTru_VND": 8025000000,
+    "GiuLai_BaoHanh_VND": 2675000000,
+    "Thue_KhauTru_VND": 0,
+    "PhatLD_VND": 0,
+    "GiaTri_ThanhToan_ThucVND": 42800000000,
+    "TrangThai": "Đã thanh toán",
+    "IDHoSoNghiemThu": "",
+    "IDHoSoThanhToan": "",
+    "GhiChu": ""
+   },
+   {
+    "IDThanhToan": "PMT-CW01-006",
+    "SoDot": 6,
+    "LoaiThanhToan": "Nghiệm thu KL",
+    "IDGoiThau": "PKG-CW01",
+    "IDHopDong": "HD-CW01-01",
+    "IDNhaThau": "NT-001",
+    "IDNgayTrinh": "2025-07-08",
+    "IDNgayDuyet": "",
+    "IDNgayThanhToan": "",
+    "GiaTri_DeNghi_VND": 62000000000,
+    "GiaTri_ChungNhan_VND": 0,
+    "GiaTri_DuocDuyet_VND": 0,
+    "TamUng_KhauTru_VND": 0,
+    "GiuLai_BaoHanh_VND": 0,
+    "Thue_KhauTru_VND": 0,
+    "PhatLD_VND": 0,
+    "GiaTri_ThanhToan_ThucVND": 0,
+    "TrangThai": "Chờ duyệt",
+    "IDHoSoNghiemThu": "DOC-NT-CW01-005",
+    "IDHoSoThanhToan": "",
+    "GhiChu": "Đang rà soát HS nghiệm thu"
+   },
+   {
+    "IDThanhToan": "PMT-CW02-004",
+    "SoDot": 4,
+    "LoaiThanhToan": "Nghiệm thu KL",
+    "IDGoiThau": "PKG-CW02",
+    "IDHopDong": "HD-CW02-01",
+    "IDNhaThau": "NT-002",
+    "IDNgayTrinh": "2025-05-15",
+    "IDNgayDuyet": "2025-05-28",
+    "IDNgayThanhToan": "2025-06-10",
+    "GiaTri_DeNghi_VND": 48000000000,
+    "GiaTri_ChungNhan_VND": 47200000000,
+    "GiaTri_DuocDuyet_VND": 47200000000,
+    "TamUng_KhauTru_VND": 7080000000,
+    "GiuLai_BaoHanh_VND": 2360000000,
+    "Thue_KhauTru_VND": 0,
+    "PhatLD_VND": 0,
+    "GiaTri_ThanhToan_ThucVND": 37760000000,
+    "TrangThai": "Đã thanh toán",
+    "IDHoSoNghiemThu": "",
+    "IDHoSoThanhToan": "",
+    "GhiChu": ""
+   },
+   {
+    "IDThanhToan": "PMT-CW05-002",
+    "SoDot": 2,
+    "LoaiThanhToan": "Nghiệm thu KL",
+    "IDGoiThau": "PKG-CW05",
+    "IDHopDong": "HD-CW05-01",
+    "IDNhaThau": "NT-005",
+    "IDNgayTrinh": "2025-06-20",
+    "IDNgayDuyet": "",
+    "IDNgayThanhToan": "",
+    "GiaTri_DeNghi_VND": 35000000000,
+    "GiaTri_ChungNhan_VND": 0,
+    "GiaTri_DuocDuyet_VND": 0,
+    "TamUng_KhauTru_VND": 0,
+    "GiuLai_BaoHanh_VND": 0,
+    "Thue_KhauTru_VND": 0,
+    "PhatLD_VND": 0,
+    "GiaTri_ThanhToan_ThucVND": 0,
+    "TrangThai": "Chờ duyệt",
+    "IDHoSoNghiemThu": "",
+    "IDHoSoThanhToan": "",
+    "GhiChu": ""
+   }
+  ],
+  "Fact_GiaiNgan": [
+   {
+    "IDBanGhi": "GN-CW01-202506",
+    "IDGoiThau": "PKG-CW01",
+    "IDHopDong": "HD-CW01-01",
+    "IDNgay": "2025-06-30",
+    "KyBaoCao": "2025-06",
+    "NguonVon": "ODA",
+    "KeHoachThang_VND": 45000000000,
+    "KeHoachLuyKe_VND": 470000000000,
+    "ThucTeThang_VND": 42800000000,
+    "ThucTeLuyKe_VND": 428750000000,
+    "SaiLech_VND": -41250000000,
+    "TyLeHoanThanh_KH": 0.9122,
+    "GhiChu": "Chậm nhẹ do thanh toán đợt 5 dời sang T5"
+   },
+   {
+    "IDBanGhi": "GN-CW02-202506",
+    "IDGoiThau": "PKG-CW02",
+    "IDHopDong": "HD-CW02-01",
+    "IDNgay": "2025-06-30",
+    "KyBaoCao": "2025-06",
+    "NguonVon": "ODA",
+    "KeHoachThang_VND": 40000000000,
+    "KeHoachLuyKe_VND": 320000000000,
+    "ThucTeThang_VND": 37760000000,
+    "ThucTeLuyKe_VND": 312840000000,
+    "SaiLech_VND": -7160000000,
+    "TyLeHoanThanh_KH": 0.9776,
+    "GhiChu": ""
+   },
+   {
+    "IDBanGhi": "GN-CW03-202506",
+    "IDGoiThau": "PKG-CW03",
+    "IDHopDong": "HD-CW03-01",
+    "IDNgay": "2025-06-30",
+    "KyBaoCao": "2025-06",
+    "NguonVon": "Đối ứng",
+    "KeHoachThang_VND": 22000000000,
+    "KeHoachLuyKe_VND": 210000000000,
+    "ThucTeThang_VND": 21800000000,
+    "ThucTeLuyKe_VND": 205400000000,
+    "SaiLech_VND": -4600000000,
+    "TyLeHoanThanh_KH": 0.9781,
+    "GhiChu": ""
+   },
+   {
+    "IDBanGhi": "GN-CW04-202506",
+    "IDGoiThau": "PKG-CW04",
+    "IDHopDong": "HD-CW04-01",
+    "IDNgay": "2025-06-30",
+    "KyBaoCao": "2025-06",
+    "NguonVon": "ODA",
+    "KeHoachThang_VND": 50000000000,
+    "KeHoachLuyKe_VND": 280000000000,
+    "ThucTeThang_VND": 30500000000,
+    "ThucTeLuyKe_VND": 195000000000,
+    "SaiLech_VND": -85000000000,
+    "TyLeHoanThanh_KH": 0.6964,
+    "GhiChu": "Cảnh báo: giải ngân chậm 30% - kiểm tra tiến độ nhập thiết bị"
+   },
+   {
+    "IDBanGhi": "GN-CW05-202506",
+    "IDGoiThau": "PKG-CW05",
+    "IDHopDong": "HD-CW05-01",
+    "IDNgay": "2025-06-30",
+    "KyBaoCao": "2025-06",
+    "NguonVon": "ODA",
+    "KeHoachThang_VND": 25000000000,
+    "KeHoachLuyKe_VND": 130000000000,
+    "ThucTeThang_VND": 18500000000,
+    "ThucTeLuyKe_VND": 105300000000,
+    "SaiLech_VND": -24700000000,
+    "TyLeHoanThanh_KH": 0.81,
+    "GhiChu": ""
+   }
+  ],
+  "Fact_NganSach": [
+   {
+    "IDBanGhi": "NS-CW01-2025-ODA",
+    "IDGoiThau": "PKG-CW01",
+    "IDHopDong": "HD-CW01-01",
+    "NamKeHoach": 2025,
+    "NguonVon": "ODA",
+    "LoaiNganSach": "Duyệt ban đầu",
+    "GiaTri_VND": 250000000000,
+    "NgayPheDuyet": "2024-12-20",
+    "SoQuyetDinh": "QĐ-KHV-2025-CW01",
+    "IDHoSoNguon": "",
+    "GhiChu": ""
+   },
+   {
+    "IDBanGhi": "NS-CW02-2025-ODA",
+    "IDGoiThau": "PKG-CW02",
+    "IDHopDong": "HD-CW02-01",
+    "NamKeHoach": 2025,
+    "NguonVon": "ODA",
+    "LoaiNganSach": "Duyệt ban đầu",
+    "GiaTri_VND": 200000000000,
+    "NgayPheDuyet": "2024-12-20",
+    "SoQuyetDinh": "QĐ-KHV-2025-CW02",
+    "IDHoSoNguon": "",
+    "GhiChu": ""
+   },
+   {
+    "IDBanGhi": "NS-CW03-2025-DU",
+    "IDGoiThau": "PKG-CW03",
+    "IDHopDong": "HD-CW03-01",
+    "NamKeHoach": 2025,
+    "NguonVon": "Đối ứng",
+    "LoaiNganSach": "Duyệt ban đầu",
+    "GiaTri_VND": 150000000000,
+    "NgayPheDuyet": "2024-12-20",
+    "SoQuyetDinh": "QĐ-KHV-2025-CW03",
+    "IDHoSoNguon": "",
+    "GhiChu": ""
+   },
+   {
+    "IDBanGhi": "NS-CW04-2025-ODA",
+    "IDGoiThau": "PKG-CW04",
+    "IDHopDong": "HD-CW04-01",
+    "NamKeHoach": 2025,
+    "NguonVon": "ODA",
+    "LoaiNganSach": "Duyệt ban đầu",
+    "GiaTri_VND": 300000000000,
+    "NgayPheDuyet": "2024-12-20",
+    "SoQuyetDinh": "QĐ-KHV-2025-CW04",
+    "IDHoSoNguon": "",
+    "GhiChu": ""
+   },
+   {
+    "IDBanGhi": "NS-CW05-2025-ODA",
+    "IDGoiThau": "PKG-CW05",
+    "IDHopDong": "HD-CW05-01",
+    "NamKeHoach": 2025,
+    "NguonVon": "ODA",
+    "LoaiNganSach": "Duyệt ban đầu",
+    "GiaTri_VND": 180000000000,
+    "NgayPheDuyet": "2024-12-20",
+    "SoQuyetDinh": "QĐ-KHV-2025-CW05",
+    "IDHoSoNguon": "",
+    "GhiChu": ""
+   }
+  ],
+  "Fact_EVM": [
+   {
+    "IDBanGhi": "EVM-CW01-202506",
+    "IDGoiThau": "PKG-CW01",
+    "IDNgay": "2025-06-30",
+    "KyBaoCao": "2025-06",
+    "BAC_VND": 835000000000,
+    "PV_VND": 501000000000,
+    "EV_VND": 459250000000,
+    "AC_VND": 475000000000,
+    "SV_VND": -41750000000,
+    "CV_VND": -15750000000,
+    "SPI": 0.9167,
+    "CPI": 0.9668,
+    "EAC_VND": 863664000000,
+    "ETC_VND": 388664000000,
+    "VAC_VND": -28664000000,
+    "TrangThai_DuLieu": "Đủ dữ liệu",
+    "GhiChu": "SPI<1 và CPI<1: gói bị chậm và vượt chi phí nhẹ. Cần chú ý."
+   },
+   {
+    "IDBanGhi": "EVM-CW02-202506",
+    "IDGoiThau": "PKG-CW02",
+    "IDNgay": "2025-06-30",
+    "KyBaoCao": "2025-06",
+    "BAC_VND": 605000000000,
+    "PV_VND": 332750000000,
+    "EV_VND": 350900000000,
+    "AC_VND": 342000000000,
+    "SV_VND": 18150000000,
+    "CV_VND": 8900000000,
+    "SPI": 1.0545,
+    "CPI": 1.026,
+    "EAC_VND": 589670000000,
+    "ETC_VND": 247670000000,
+    "VAC_VND": 15330000000,
+    "TrangThai_DuLieu": "Đủ dữ liệu",
+    "GhiChu": "Gói khỏe: vượt kế hoạch, tiết kiệm chi phí."
+   },
+   {
+    "IDBanGhi": "EVM-CW03-202506",
+    "IDGoiThau": "PKG-CW03",
+    "IDNgay": "2025-06-30",
+    "KyBaoCao": "2025-06",
+    "BAC_VND": 365000000000,
+    "PV_VND": 237250000000,
+    "EV_VND": 219000000000,
+    "AC_VND": 225000000000,
+    "SV_VND": -18250000000,
+    "CV_VND": -6000000000,
+    "SPI": 0.9231,
+    "CPI": 0.9733,
+    "EAC_VND": 374998000000,
+    "ETC_VND": 149998000000,
+    "VAC_VND": -9998000000,
+    "TrangThai_DuLieu": "Đủ dữ liệu",
+    "GhiChu": ""
+   },
+   {
+    "IDBanGhi": "EVM-CW04-202506",
+    "IDGoiThau": "PKG-CW04",
+    "IDNgay": "2025-06-30",
+    "KyBaoCao": "2025-06",
+    "BAC_VND": 695000000000,
+    "PV_VND": 278000000000,
+    "EV_VND": 243250000000,
+    "AC_VND": 260000000000,
+    "SV_VND": -34750000000,
+    "CV_VND": -16750000000,
+    "SPI": 0.875,
+    "CPI": 0.9356,
+    "EAC_VND": 742836000000,
+    "ETC_VND": 482836000000,
+    "VAC_VND": -47836000000,
+    "TrangThai_DuLieu": "Đủ dữ liệu",
+    "GhiChu": "Cảnh báo P1: chậm tiến độ và vượt chi phí đáng kể."
+   },
+   {
+    "IDBanGhi": "EVM-CW05-202506",
+    "IDGoiThau": "PKG-CW05",
+    "IDNgay": "2025-06-30",
+    "KyBaoCao": "2025-06",
+    "BAC_VND": 470000000000,
+    "PV_VND": 141000000000,
+    "EV_VND": 117500000000,
+    "AC_VND": 125000000000,
+    "SV_VND": -23500000000,
+    "CV_VND": -7500000000,
+    "SPI": 0.8333,
+    "CPI": 0.94,
+    "EAC_VND": 500000000000,
+    "ETC_VND": 375000000000,
+    "VAC_VND": -30000000000,
+    "TrangThai_DuLieu": "Đủ dữ liệu",
+    "GhiChu": "Có phụ lục PL01 phát sinh 8 tỷ - đã điều chỉnh BAC"
+   }
+  ],
+  "Fact_CongViec": [
+   {
+    "IDSuKien": "TE-2025070500001",
+    "IDCongViec": "TASK-CW01-005",
+    "IDGoiThau": "PKG-CW01",
+    "LoaiSuKien": "Tạo",
+    "IDNgaySuKien": "2025-07-05",
+    "ThoiDiem": "09:15",
+    "TrangThai_Truoc": "",
+    "TrangThai_Sau": "Hôm nay",
+    "Owner_Truoc": "",
+    "Owner_Sau": "PM CW01",
+    "NguoiThucHien": "AI Alert System",
+    "GhiChu": "AI phát hiện thiếu ảnh hiện trường"
+   },
+   {
+    "IDSuKien": "TE-2025041800001",
+    "IDCongViec": "TASK-CW05-020",
+    "IDGoiThau": "PKG-CW05",
+    "LoaiSuKien": "Đổi TT",
+    "IDNgaySuKien": "2025-04-18",
+    "ThoiDiem": "16:40",
+    "TrangThai_Truoc": "Hôm nay",
+    "TrangThai_Sau": "Hoàn thành",
+    "Owner_Truoc": "KS dự toán",
+    "Owner_Sau": "KS dự toán",
+    "NguoiThucHien": "KS dự toán",
+    "GhiChu": "Đã phê duyệt phụ lục PL01"
+   }
+  ],
+  "Fact_HopDong_Event": [
+   {
+    "IDSuKien": "HE-CW01-001",
+    "IDHopDong": "HD-CW01-01",
+    "IDGoiThau": "PKG-CW01",
+    "LoaiSuKien": "Ký",
+    "MoTa": "Ký HĐ thi công CW-01",
+    "IDNgay": "2023-05-15",
+    "GiaTriTacDong_VND": 820000000000,
+    "IDDieuKhoanLienQuan": "",
+    "IDHoSoNguon": "DOC-HD-CW01-001",
+    "TrangThai": "Đã hoàn tất",
+    "GhiChu": ""
+   },
+   {
+    "IDSuKien": "HE-CW01-002",
+    "IDHopDong": "HD-CW01-01",
+    "IDGoiThau": "PKG-CW01",
+    "LoaiSuKien": "Hiệu lực",
+    "MoTa": "HĐ có hiệu lực",
+    "IDNgay": "2023-06-01",
+    "GiaTriTacDong_VND": 0,
+    "IDDieuKhoanLienQuan": "",
+    "IDHoSoNguon": "DOC-HD-CW01-001",
+    "TrangThai": "Đã hoàn tất",
+    "GhiChu": ""
+   },
+   {
+    "IDSuKien": "HE-CW01-003",
+    "IDHopDong": "HD-CW01-PL01",
+    "IDGoiThau": "PKG-CW01",
+    "LoaiSuKien": "Phụ lục",
+    "MoTa": "Ký PL01 - phát sinh HTKT",
+    "IDNgay": "2024-08-10",
+    "GiaTriTacDong_VND": 15000000000,
+    "IDDieuKhoanLienQuan": "",
+    "IDHoSoNguon": "",
+    "TrangThai": "Đã hoàn tất",
+    "GhiChu": ""
+   },
+   {
+    "IDSuKien": "HE-CW04-005",
+    "IDHopDong": "HD-CW04-01",
+    "IDGoiThau": "PKG-CW04",
+    "LoaiSuKien": "Mốc",
+    "MoTa": "BLTHHĐ hết hạn - cần gia hạn",
+    "IDNgay": "2026-01-15",
+    "GiaTriTacDong_VND": 0,
+    "IDDieuKhoanLienQuan": "",
+    "IDHoSoNguon": "",
+    "TrangThai": "Chờ",
+    "GhiChu": "Cần yêu cầu Nhà thầu D gia hạn trước 2025-11-15"
+   },
+   {
+    "IDSuKien": "HE-CW05-004",
+    "IDHopDong": "HD-CW05-PL01",
+    "IDGoiThau": "PKG-CW05",
+    "LoaiSuKien": "Phụ lục",
+    "MoTa": "Ký PL01 - bổ sung thiết bị đo lường",
+    "IDNgay": "2025-04-20",
+    "GiaTriTacDong_VND": 8000000000,
+    "IDDieuKhoanLienQuan": "",
+    "IDHoSoNguon": "DOC-HD-CW05-002",
+    "TrangThai": "Đã hoàn tất",
+    "GhiChu": ""
+   }
+  ],
+  "Fact_PhatSinh": [
+   {
+    "IDPhatSinh": "PS-CW01-001",
+    "IDGoiThau": "PKG-CW01",
+    "IDHopDong": "HD-CW01-01",
+    "IDHopDongPhuLuc": "HD-CW01-PL01",
+    "LoaiPhatSinh": "Tăng KL",
+    "NguyenNhan": "Nền địa chất yếu cần bổ sung xử lý",
+    "MoTa": "Phát sinh khối lượng cọc + xử lý nền HTKT khu B",
+    "IDNgayPhatHien": "2024-05-10",
+    "IDNgayDeNghi": "2024-06-15",
+    "IDNgayDuyet": "2024-08-05",
+    "GiaTri_DeNghi_VND": 18000000000,
+    "GiaTri_DuyetVND": 15000000000,
+    "TrangThai": "Đã ký PL",
+    "IDHoSoNguon": "",
+    "GhiChu": "Đã ký PL01"
+   },
+   {
+    "IDPhatSinh": "PS-CW05-001",
+    "IDGoiThau": "PKG-CW05",
+    "IDHopDong": "HD-CW05-01",
+    "IDHopDongPhuLuc": "HD-CW05-PL01",
+    "LoaiPhatSinh": "Phạm vi",
+    "NguyenNhan": "Yêu cầu bổ sung thiết bị đo lường online của cơ quan môi trường",
+    "MoTa": "Bổ sung 4 trạm quan trắc online tại đầu ra + đầu vào",
+    "IDNgayPhatHien": "2025-01-10",
+    "IDNgayDeNghi": "2025-02-20",
+    "IDNgayDuyet": "2025-04-15",
+    "GiaTri_DeNghi_VND": 9500000000,
+    "GiaTri_DuyetVND": 8000000000,
+    "TrangThai": "Đã ký PL",
+    "IDHoSoNguon": "DOC-HD-CW05-002",
+    "GhiChu": ""
+   },
+   {
+    "IDPhatSinh": "PS-CW04-002",
+    "IDGoiThau": "PKG-CW04",
+    "IDHopDong": "HD-CW04-01",
+    "IDHopDongPhuLuc": "",
+    "LoaiPhatSinh": "Kỹ thuật",
+    "NguyenNhan": "Nâng cấp cấu hình máy chủ theo tiêu chuẩn mới",
+    "MoTa": "Nâng cấp 12 rack server + hạ tầng mạng",
+    "IDNgayPhatHien": "2025-05-01",
+    "IDNgayDeNghi": "2025-06-20",
+    "IDNgayDuyet": "",
+    "GiaTri_DeNghi_VND": 22000000000,
+    "GiaTri_DuyetVND": 0,
+    "TrangThai": "Đang xem xét",
+    "IDHoSoNguon": "",
+    "GhiChu": "Đang xin ý kiến WB"
+   }
+  ],
+  "Fact_RuiRo": [
+   {
+    "IDSuKien": "RE-2025070500001",
+    "IDRuiRo": "R-DOC-001",
+    "IDGoiThau": "PKG-CW01",
+    "IDHopDong": "HD-CW01-01",
+    "IDNgayPhatHien": "2025-07-05",
+    "MoTa_SuKien": "Đợt thanh toán 06 - thiếu ảnh hiện trường trong BBNT",
+    "MucDoNghiemTrong": "P1",
+    "TacDong_Diem": 4,
+    "XacSuat_Diem": 5,
+    "Diem_RuiRo": 20,
+    "NguonCanhBao": "AI",
+    "TrangThai": "Đang xử lý",
+    "NguoiPhuTrach": "PM CW01",
+    "HanhDong_KhuyenNghi": "Yêu cầu Nhà thầu bổ sung ảnh hiện trường trước 10/07",
+    "IDCongViec_TaoRa": "TASK-CW01-005",
+    "IDHoSoNguon": "DOC-NT-CW01-005",
+    "PhanLoai_AI": "Đã xác nhận",
+    "GhiChu": ""
+   },
+   {
+    "IDSuKien": "RE-2025090100001",
+    "IDRuiRo": "R-HD-001",
+    "IDGoiThau": "PKG-CW04",
+    "IDHopDong": "HD-CW04-01",
+    "IDNgayPhatHien": "2025-09-01",
+    "MoTa_SuKien": "BLTHHĐ CW-04 hết hạn 2026-01-15, còn 4.5 tháng",
+    "MucDoNghiemTrong": "P2",
+    "TacDong_Diem": 5,
+    "XacSuat_Diem": 3,
+    "Diem_RuiRo": 15,
+    "NguonCanhBao": "AI",
+    "TrangThai": "Đang xử lý",
+    "NguoiPhuTrach": "Chuyên viên HĐ",
+    "HanhDong_KhuyenNghi": "Yêu cầu Nhà thầu D gia hạn BL trước 15/11/2025",
+    "IDCongViec_TaoRa": "TASK-CW04-012",
+    "IDHoSoNguon": "",
+    "PhanLoai_AI": "Đã xác nhận",
+    "GhiChu": ""
+   },
+   {
+    "IDSuKien": "RE-2025070500002",
+    "IDRuiRo": "R-TIME-001",
+    "IDGoiThau": "PKG-CW04",
+    "IDHopDong": "HD-CW04-01",
+    "IDNgayPhatHien": "2025-07-05",
+    "MoTa_SuKien": "SPI CW-04 = 0.875 (chậm 12.5%), CPI 0.94 - dấu hiệu cảnh báo",
+    "MucDoNghiemTrong": "P1",
+    "TacDong_Diem": 5,
+    "XacSuat_Diem": 4,
+    "Diem_RuiRo": 20,
+    "NguonCanhBao": "AI",
+    "TrangThai": "Mới",
+    "NguoiPhuTrach": "PM CW04",
+    "HanhDong_KhuyenNghi": "Rà soát tiến độ nhập thiết bị + tăng cường nhân lực lắp đặt",
+    "IDCongViec_TaoRa": "",
+    "IDHoSoNguon": "",
+    "PhanLoai_AI": "Cần con người kiểm tra",
+    "GhiChu": "Dựa trên EVM kỳ 06/2025"
+   }
+  ],
+  "Fact_TrangThai_HoSo": [
+   {
+    "IDSuKien": "DE-2025070500001",
+    "IDHoSo": "DOC-NT-CW01-005",
+    "IDGoiThau": "PKG-CW01",
+    "IDNgay": "2025-07-05",
+    "LoaiSuKien": "Thêm",
+    "TrangThai_Truoc": "",
+    "TrangThai_Sau": "Dự thảo",
+    "PhienBan_Truoc": "",
+    "PhienBan_Sau": "Rev.0",
+    "NguoiThucHien": "TVGS",
+    "NguonThucHien": "Google Drive Watch",
+    "GhiChu": "Tự động phát hiện file mới trong thư mục CW01/06.NghiemThu"
+   },
+   {
+    "IDSuKien": "DE-2025070600001",
+    "IDHoSo": "DOC-NT-CW01-005",
+    "IDGoiThau": "PKG-CW01",
+    "IDNgay": "2025-07-06",
+    "LoaiSuKien": "Duyệt",
+    "TrangThai_Truoc": "Dự thảo",
+    "TrangThai_Sau": "Hiệu lực",
+    "PhienBan_Truoc": "Rev.0",
+    "PhienBan_Sau": "Rev.0",
+    "NguoiThucHien": "PM CW01",
+    "NguonThucHien": "Thủ công",
+    "GhiChu": ""
+   }
+  ]
+ }
+}
